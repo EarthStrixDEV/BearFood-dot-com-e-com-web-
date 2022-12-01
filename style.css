@@ -1,0 +1,350 @@
+@import url('https://fonts.googleapis.com/css2?family=Fredoka+One&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Fredoka One', cursive;;
+}
+
+nav {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    padding: 0.8rem 2rem 0.8rem 2rem;
+    box-shadow: 0 1px 2px -1px;
+}
+
+nav h2 {
+    font-size: 30px;
+    font-weight: 700;
+}
+
+nav ul {
+    display: flex;
+    flex-direction: row;
+    list-style: none;
+    justify-content: space-evenly;
+}
+
+nav ul a {
+    margin-right: 1.4rem;
+    padding: 10px;
+    text-decoration: none;
+    color: rgb(92, 92, 92);
+    font-size: 1.3rem;
+}
+
+nav ul a[id="home"] {
+    border-radius: 20px;
+    background: #333;
+    color: #fff;
+}
+
+nav ul a[id="home"]:hover {
+    border-radius: 20px;
+    background: #333;
+    color: #fff;
+}
+
+nav ul a[id="home"]:active {
+    border-radius: 20px;
+    background: #fff;
+    color: #333;
+}
+
+nav ul a:hover {
+    background: rgba(195, 195, 195, 0.505);
+    border-radius: 20px;
+}
+
+nav ul a:active {
+    background: #333;
+    color: #fff;
+    border-radius: 20px;
+}
+
+.icon-container {
+    display: flex;
+    justify-content: flex-end;
+    padding-right: 2rem;
+}
+
+.icon-container span {
+    margin-left: 1rem;
+    font-size: 1.5rem;
+    color: rgb(92, 92, 92);
+    width: 60px;
+}
+
+.icon-container i {
+    cursor: pointer;
+    position: relative;
+    left: 30%;
+    top: 15%;
+}
+
+.icon-container span:hover {
+    background-color: rgb(199, 199, 199);
+    border-radius: 20px;
+    color: #fff;
+}
+
+.icon-container span:active {
+    background-color: #333;
+    border-radius: 20px;
+    color: #fff;
+}
+
+/* header */
+header {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 2rem;
+}
+
+.large-header {
+    width: 80%;
+    height: 80%;
+    display: flex;
+    align-items: center;
+    box-shadow: 0 1px 2px -1px;
+    padding: 1.3rem;
+    border-radius: 30px;
+}
+
+.left-text-header {
+    width: 50%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.left-text-header h4 {
+    font-size: 1.8rem;
+    font-weight: 700;
+    text-align: center;
+    margin-bottom:0.4rem;
+}
+
+.left-text-header h2 {
+    font-size: 1.4rem;
+    text-align: center;
+    padding: 1rem;
+    margin-bottom:0.4rem;
+}
+
+.left-text-header button {
+    padding: 0.8rem 1.5rem 0.8rem 1.5rem;
+    border: none;
+    border-radius: 20px;
+    background: #333;
+    color: #fff;
+    font-size: 1.2rem;
+    cursor: pointer;
+    margin-bottom:0.4rem;
+}
+
+.left-text-header button:active {
+    background: #fff;
+    color: #333;
+}
+
+.right-image-header {
+    width: 70%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.right-image-header img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 30px;
+}
+
+.text-image {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    position: absolute;
+    background-color: rgba(229, 229, 229, 0.451);
+    width: 834px;
+    height: 567px;
+    border-radius: 30px;
+    visibility: hidden;
+}
+
+.text-image h3 {
+    font-size: 1.8rem;
+    font-weight: 700;
+    text-align: center;
+    margin-bottom:0.4rem;
+    text-shadow: 0 0 7px #fff,
+    0 0 10px #fff,
+    0 0 21px #fff,
+    0 0 42px #0fa,
+    0 0 82px #0fa,
+    0 0 92px #0fa,
+    0 0 102px #0fa,
+    0 0 151px #0fa,
+    0 0 151px #0fa,
+    0 0 151px #0fa; 
+}
+
+.text-image p {
+    font-size: 1.4rem;
+    text-align: center;
+    padding: 1rem;
+    margin-bottom:0.4rem;
+    text-shadow: 0 0 7px #fff,
+    0 0 10px #fff,
+    0 0 21px #fff,
+    0 0 42px #0fa,
+    0 0 82px #0fa,
+    0 0 92px #0fa,
+    0 0 102px #0fa,
+    0 0 151px #0fa,
+    0 0 151px #0fa,
+    0 0 151px #0fa; 
+}
+
+/* section 2 */
+
+.nav-category {
+    display: flex;
+    flex-direction: row;
+    justify-content:space-around;
+    padding: 1.7rem 2rem 1.7rem 2rem;
+    box-shadow: 0 1px 2px -1px;
+    margin-top: 1.2rem;
+    border-radius: 30px;
+    width: 40%;
+}
+
+.nav-category button {
+    border: 1px solid #333;
+    border-radius: 30px;
+    padding: 0.5rem;
+    cursor: pointer;
+    background: #fff;
+    font-size: 1rem;
+}
+.nav-category button:hover {
+    background: rgba(177, 177, 177, 0.274);
+}
+
+.nav-category button:active {
+    background: #333;
+    color: #fff;
+}
+
+/* section grid */
+section {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    grid-template-rows: repeat(2, 1fr);
+    grid-gap: 2rem;
+    padding: 0 10rem 0 10rem;
+}
+
+.item-section {
+    width: 380px;
+    height: 430px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 1rem;
+    box-shadow: 0 1px 2px -1px;
+    border-radius: 30px;
+}
+
+.item-section img {
+    width: 100%;
+    height: 100%;
+    object-fit:cover;
+    border-radius: 30px;
+}
+
+.item-section p {
+    font-size: 1rem;
+    font-weight: 400;
+    margin: 1.5rem 0 0 0;
+}
+
+.item-section strong {
+    margin: 1rem 0 0 0;
+}
+
+/* footer */
+footer {
+    display: flex;
+    justify-content: space-around;
+    padding: 1.5rem;
+    box-shadow: 0 -1px 2px -1px;
+    margin-top: 5rem;
+    height: 200px;
+}
+
+.payment {
+    padding: 1.2rem;
+}
+
+.payment h4 {
+    font-size: 1.75rem;
+    line-height: 30px;
+}
+
+.payment strong {
+    font-size: 1.3rem;
+    line-height: 30px;
+}
+
+.payment-icon {
+    padding-top: 1rem;
+}
+
+.payment-icon i {
+    font-size: 2rem;
+    margin-right: 1rem;
+}
+
+.menu {
+    display: flex;
+    flex-direction:row;
+    padding: 1rem;
+}
+
+.menu ul {
+    margin-right: 3rem;
+    list-style-type: none;
+}
+
+.menu ul li {
+    margin-bottom: 0.5rem;
+}
+
+.contact {
+    padding: 1rem;
+}
+
+.contact p {
+    font-size: 1.2rem;
+    line-height: 30px;
+    margin-bottom: 0.8rem;
+}
+
+.contact i {
+    font-size: 1.5rem;
+    margin-right: 1rem;
+}
