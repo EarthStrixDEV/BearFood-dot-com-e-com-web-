@@ -1,0 +1,160 @@
+@import url('https://fonts.googleapis.com/css2?family=Fredoka+One&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Fredoka One', cursive;
+}
+
+nav {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    padding: 0.8rem 2rem 0.8rem 2rem;
+    box-shadow: 0 1px 2px -1px;
+}
+
+nav h2 {
+    font-size: 30px;
+    font-weight: 700;
+}
+
+nav ul {
+    display: flex;
+    flex-direction: row;
+    list-style: none;
+    justify-content: space-evenly;
+}
+
+nav ul a {
+    margin-right: 1.4rem;
+    padding: 10px;
+    text-decoration: none;
+    color: rgb(92, 92, 92);
+    font-size: 1.3rem;
+}
+
+nav ul a[id="home"] {
+    border-radius: 20px;
+    background: #333;
+    color: #fff;
+}
+
+nav ul a[id="home"]:hover {
+    border-radius: 20px;
+    background: #333;
+    color: #fff;
+}
+
+nav ul a[id="home"]:active {
+    border-radius: 20px;
+    background: #fff;
+    color: #333;
+}
+
+nav ul a:hover {
+    background: rgba(195, 195, 195, 0.505);
+    border-radius: 20px;
+}
+
+nav ul a:active {
+    background: #333;
+    color: #fff;
+    border-radius: 20px;
+}
+
+.icon-container {
+    display: flex;
+    justify-content: flex-end;
+    padding-right: 2rem;
+}
+
+.icon-container span {
+    margin-left: 1rem;
+    font-size: 1.5rem;
+    color: rgb(92, 92, 92);
+    width: 60px;
+}
+
+.icon-container i {
+    cursor: pointer;
+    position: relative;
+    left: 30%;
+    top: 15%;
+}
+
+.icon-container span:hover {
+    background-color: rgb(199, 199, 199);
+    border-radius: 20px;
+    color: #fff;
+}
+
+.icon-container span:active {
+    background-color: #333;
+    border-radius: 20px;
+    color: #fff;
+}
+
+/* footer */
+footer {
+    display: flex;
+    justify-content: space-around;
+    padding: 1.5rem;
+    box-shadow: 0 -1px 2px -1px;
+    margin-top: 5rem;
+    height: 200px;
+}
+
+.payment {
+    padding: 1.2rem;
+}
+
+.payment h4 {
+    font-size: 1.75rem;
+    line-height: 30px;
+}
+
+.payment strong {
+    font-size: 1.3rem;
+    line-height: 30px;
+}
+
+.payment-icon {
+    padding-top: 1rem;
+}
+
+.payment-icon i {
+    font-size: 2rem;
+    margin-right: 1rem;
+}
+
+.menu {
+    display: flex;
+    flex-direction: row;
+    padding: 1rem;
+}
+
+.menu ul {
+    margin-right: 3rem;
+    list-style-type: none;
+}
+
+.menu ul li {
+    margin-bottom: 0.5rem;
+}
+
+.contact {
+    padding: 1rem;
+}
+
+.contact p {
+    font-size: 1.2rem;
+    line-height: 30px;
+    margin-bottom: 0.8rem;
+}
+
+.contact i {
+    font-size: 1.5rem;
+    margin-right: 1rem;
+}

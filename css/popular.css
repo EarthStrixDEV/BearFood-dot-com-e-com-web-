@@ -1,0 +1,137 @@
+:root {
+    --padding-text-float: 1rem 0 1rem 0;
+    --theme-background-color: rgba(233, 229, 233, 0.202);
+    --theme-text-background-color: rgb(240, 236, 240);
+}
+
+.owl-carousel {
+    width: 100%;
+    background: var(--theme-background-color);
+}
+
+.owl-carousel img {
+    width: 100%;
+    height: 800px;
+    filter: brightness(70%);
+}
+
+.float-caption {
+    position: absolute;
+    left: 30%;
+    transform: translate(-30%, -230%);
+    width: 700px;
+    height: 250px;
+    z-index: 1;
+}
+
+.float-caption h2 {
+    background: var(--theme-text-background-color);
+    font-size: 2rem;
+    width: 450px;
+    padding: 0.6rem;
+    text-align: center;
+    color: rgb(51, 51, 51);
+}
+
+.float-caption h3 {
+    padding: var(--padding-text-float);
+    color: #fff;
+    text-shadow: 3px 3px 2px rgba(25, 25, 25, 0.519);
+    font-size: 1.5rem;
+    letter-spacing: 2px;
+    border-bottom: 1px solid #fff;
+}
+
+.float-caption p,
+small {
+    color: #fff;
+    text-shadow: 3px 3px 2px rgba(25, 25, 25, 0.519);
+    font-size: 1.5rem;
+    padding: var(--padding-text-float);
+}
+
+.grid-category {
+    display: flex;
+    justify-content: center;
+    margin-top: 3rem;
+    padding-top: 2rem;
+}
+
+.grid-category-nested {
+    display: grid;
+    grid-template-columns: auto auto;
+    grid-template-rows: auto auto;
+}
+
+.grid-category .grid-category-item {
+    padding: 0.6rem;
+}
+
+.grid-category .grid-category-item h2 {
+    position: relative;
+    top: -100%;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    text-align: center;
+    flex-direction: column;
+    justify-content: center;
+    color: #fff;
+    text-shadow: 3px 3px 3px rgb(51, 51, 51);
+    letter-spacing: 2px;
+}
+
+.grid-category .grid-category-item img {
+    width: 700px;
+    height: 460px;
+    filter: brightness(70%);
+    border-radius: 15px;
+}
+
+.grid-category-nested .grid-category-item img {
+    width: 300px;
+    height: 200px;
+}
+
+.popular-food-cover {
+    width:100%;
+}
+
+.popular-food-cover-element {
+    display: flex;
+    position: relative;
+    flex-direction: column; 
+    text-align: center;
+    align-items: center;
+    transform: translateY(250%);
+    z-index: 99;
+    color:#fff;
+}
+
+.popular-food-cover-element button {
+    width: 10%;
+    height: 50px;
+    border-radius: 10px;
+    border: none;
+    cursor:pointer;
+    font-size: 20px;
+    transition: all 0.1s ease-in;
+}
+
+.popular-food-cover-element button:hover {
+    background-color: #333;
+    color: #fff;
+}
+
+.popular-food-cover-element h1 {
+    line-height: 60px;
+    padding-bottom: 1rem;
+    letter-spacing: 5px;
+}
+
+.popular-food-cover img {
+    width: 100%;
+    height: 500px;
+    object-fit: cover;
+    filter: brightness(50%);
+}
