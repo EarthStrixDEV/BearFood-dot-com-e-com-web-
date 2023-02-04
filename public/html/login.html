@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../css/login.css">
+    <title>Login / Register</title>
+</head>
+<body>
+    <h1 class="header-page-text">Login / Register</h1>
+    <div class="container">
+        <div class="login-container">
+            <form action="/login/login_" method="post">
+                <fieldset>
+                    <legend>Login</legend>
+                    <span class="input-box">
+                        <p for="">Username</p>
+                        <input type="text" name="username" id="username" required>
+                    </span>
+                    <span class="input-box">
+                        <p for="">Password</p>
+                        <input type="password" name="password" id="password" required>
+                    </span>
+                    <span class="input-box">
+                        <button type="submit">Sign In</button>
+                    </span>
+                </fieldset>
+            </form>
+        </div>
+        <div class="login-container">
+            <form action="/login/register_" method="post">
+                <fieldset>
+                    <legend>Register</legend>
+                    <span class="input-box">
+                        <p for="">Username</p>
+                        <input type="text" name="username" id="username">
+                    </span>
+                    <span class="input-box">
+                        <p for="">Email</p>
+                        <input type="text" name="Email" id="Email">
+                    </span>
+                    <span class="input-box">
+                        <p for="">Password</p>
+                        <input type="password" name="Password" id="Password">
+                    </span>
+                    <span class="input-box">
+                        <button type="submit">Sign Up</button>
+                    </span>
+                </fieldset>
+            </form>
+        </div>
+    </div>
+    <a href="/home/" class="return-href">Return to Home Page</a>
+</body>
+</html>

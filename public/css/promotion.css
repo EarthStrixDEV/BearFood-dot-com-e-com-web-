@@ -1,0 +1,91 @@
+:root {
+    --padding-text-float: 1rem 0 1rem 0;
+    --theme-background-color: rgba(233, 229, 233, 0.202);
+    --theme-text-background-color: rgb(240, 236, 240);
+}
+
+.head-banner {
+    width: 100%;
+    height: 100%;
+}
+
+.head-banner img {
+    width: 100%;
+}
+
+.list-promotion-item {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    width: 80%;
+    margin: 3rem auto;
+}
+
+.list-promotion-item .promotion-item {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+    width: 100%;
+    height: 300px;
+    margin: 0 0 2rem 0;
+    box-shadow: 0 2px 2px rgba(54, 54, 54, 0.776);
+    border-radius: 20px;
+    align-self: center;
+    overflow: hidden;
+    padding: 2rem;
+}
+
+.promotion-img-box {
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.promotion-img-box img {
+    width: 300px;
+    height: 200px;
+    border-radius: 20px;
+}
+
+.promotion-item h1 {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    width: 30%;
+    text-align: center;
+    letter-spacing: 0.7px;
+    border-left: 0.5px solid rgba(51, 51, 51, 0.165);
+    margin: 0 0 0 1rem;
+}
+
+.promotion-item p {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    width: 30%;
+    text-align: center;
+    letter-spacing: 0.7px;
+    border-left: 0.5px solid rgba(51, 51, 51, 0.165);
+    margin: 0 0 0 1rem;
+    padding: 0 1rem 0 1rem;
+}
+
+.promotion-item button {
+    height: 25%;
+    transform: translateY(150%);
+    text-align: center;
+    width: 200px;
+    cursor: pointer;
+    margin-left:1rem;
+    background-color: #fff;
+    border: 1px solid #333;
+    border-radius: 20px;
+    font-size: 19px;
+    transition: all 0.05s ease-in;
+}
+
+.promotion-item button:hover {
+    background-color: #333;
+    color: #fff;
+}

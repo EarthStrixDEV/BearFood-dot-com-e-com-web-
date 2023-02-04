@@ -1,0 +1,100 @@
+@import url('https://fonts.googleapis.com/css2?family=Fredoka+One&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Fredoka One', cursive;
+}
+
+.header-page-text {
+    text-align: center;
+    padding: 2rem;
+}
+
+.container {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+    margin: 0 auto;
+}
+
+.container .login-container {
+    width: 700px;
+    padding: 1rem;
+}
+
+.login-container fieldset {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 2rem;
+    border-radius: 20px;
+    border: 1px solid #33333336;
+    box-shadow: 0 2px 0 #333333a3;
+}
+
+.login-container fieldset legend {
+    font-size: 30px;
+}
+
+.input-box {
+    padding: 1rem;
+    width: 100%;
+}
+
+.input-box p {
+    font-size: 30px;
+    margin-bottom: 0.6rem;
+}
+
+.input-box input {
+    padding: 0.4rem;
+    width: 500px;
+    font-size: 1.3rem;
+    border-radius: 10px;
+    border: 1px solid #33333347;
+}
+
+.input-box button {
+    width: 150px;
+    height: 50px;
+    cursor: pointer;
+    font-size: 20px;
+    border:none;
+    background-color: #fff;
+    transition: all 0.05s ease-in;
+}
+
+.input-box button:hover {
+    background-color: #e7e7e7;
+    box-shadow: 0 4px 0 #333;
+}
+
+.input-box button:active {
+    background-color: #333;
+    color: #fff;
+}
+
+.return-href {
+    cursor: pointer;
+    padding: 1rem;
+    width: 20%;
+    height: 80%;
+    transition: all 0.07s ease-in;
+    text-decoration: none;
+    color: #333;
+    margin: 0 auto;
+    margin: 46rem;
+}
+
+.return-href:hover {
+    box-shadow: 0 3px 0 #333;
+    background-color: #ececec;
+}
+
+.return-href:active {
+    box-shadow: 0 3px 0 #333;
+    background-color: #333;
+    color: #fff;
+}
