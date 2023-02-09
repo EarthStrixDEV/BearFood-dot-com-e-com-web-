@@ -4,14 +4,14 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="../css/login.css">
+    <link rel="stylesheet" href="../css/form.css">
     <title>Login / Register</title>
 </head>
 <body>
     <h1 class="header-page-text">Login / Register</h1>
     <div class="container">
         <div class="login-container">
-            <form action="/login/login_" method="post">
+            <form action="/users/login_" method="post">
                 <fieldset>
                     <legend>Login</legend>
                     <span class="input-box">
@@ -29,20 +29,32 @@
             </form>
         </div>
         <div class="login-container">
-            <form action="/login/register_" method="post">
+            <form action="/users/register_" method="post">
                 <fieldset>
                     <legend>Register</legend>
                     <span class="input-box">
                         <p for="">Username</p>
-                        <input type="text" name="username" id="username">
+                        <input type="text" name="user_username" id="user_username">
+                    </span>
+                    <span class="input-box">
+                        <p for="">First Name</p>
+                        <input type="text" name="user_fname" id="user_fname">
+                    </span>
+                    <span class="input-box">
+                        <p for="">Last Name</p>
+                        <input type="text" name="user_lname" id="user_lname">
                     </span>
                     <span class="input-box">
                         <p for="">Email</p>
-                        <input type="text" name="Email" id="Email">
+                        <input type="text" name="user_email" id="user_email">
                     </span>
                     <span class="input-box">
                         <p for="">Password</p>
-                        <input type="password" name="Password" id="Password">
+                        <input type="password" name="user_password" id="user_password">
+                    </span>
+                    <span class="input-box">
+                        <p for="">Be Seller</p>
+                        <input type="checkbox" name="user_seller" id="user_seller">
                     </span>
                     <span class="input-box">
                         <button type="submit">Sign Up</button>

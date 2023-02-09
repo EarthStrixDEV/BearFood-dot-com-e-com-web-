@@ -4,18 +4,28 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="../css/products.css">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD" crossorigin="anonymous">
-    <title>Product Management</title>
+    <link rel="stylesheet" href="../css/products.css">
+    <title>Admin System</title>
 </head>
 <body>
     <header>
-        <h1 class="header-name">Product Management System</h1>
+        <h1 class="header-name">User Management System</h1>
         <div class="header-monitor">
             <div class="header-item-counter">
                 <div class="item-counter">
                     <div class="item-counter-numerics">
-                        <h2>Total Products</h2>
+                        <h2>Total Users</h2>
+                    </div>
+                    <% Object.values(total_user).map((item) => { %>
+                         <div class="item-counter-label">
+                         <p><%= item.totalUser %></p>
+                         </div>
+                    <% }) %>
+                </div>
+                <div class="item-counter">
+                    <div class="item-counter-numerics">
+                        <h2>Total Customer</h2>
                     </div>
                     <div class="item-counter-label">
                         <p>0</p>
@@ -23,23 +33,7 @@
                 </div>
                 <div class="item-counter">
                     <div class="item-counter-numerics">
-                        <h2>Total Cart</h2>
-                    </div>
-                    <div class="item-counter-label">
-                        <p>0</p>
-                    </div>
-                </div>
-                <div class="item-counter">
-                    <div class="item-counter-numerics">
-                        <h2>Total Store</h2>
-                    </div>
-                    <div class="item-counter-label">
-                        <p>0</p>
-                    </div>
-                </div>
-                <div class="item-counter">
-                    <div class="item-counter-numerics">
-                        <h2>Total Order</h2>
+                        <h2>Total Seller</h2>
                     </div>
                     <div class="item-counter-label">
                         <p>0</p>
@@ -47,7 +41,7 @@
                 </div>
             </div>
             <div class="header-item-adder">
-                <a href="/login/add_product">Add Product</a>
+                <a href="/home/">Return to Home</a>
             </div>
         </div>
     </header>
@@ -55,28 +49,28 @@
         <table class="table table-hover">
             <thead>
                 <tr>
-                    <th>ID</th>
-                    <th>Name</th>
-                    <th>Description</th>
-                    <th>Price</th>
-                    <th>Store</th>
-                    <th>Order</th>
+                    <th>user_ID</th>
+                    <th>user_username</th>
+                    <th>user_fname</th>
+                    <th>user_lname</th>
+                    <th>user_email</th>
                 </tr>
             </thead>
             <tbody>
+                <!-- Data from database -->
                 <% Object.values(data).forEach((item) => { %>
                     <tr>
-                        <td><%= item.id %></td>
-                        <td><%= item.name %></td>
-                        <td><%= item.description %></td>
-                        <td><%= item.price %></td>
-                        <td><%= item.store %></td>
-                        <td><%= item.order %></td>
+                        <td><%= item.user_id %></td>
+                        <td><%= item.user_username %></td>
+                        <td><%= item.user_fname %></td>
+                        <td><%= item.user_lname %></td>
+                        <td><%= item.user_email %></td>
+                        <td><a href="http://" class="btn btn-primary">Edit</a></td>
+                        <td><a href="http://" class="btn btn-danger">Delete</a</td>
                     </tr>
                 <% }) %>
             </tbody>
         </table>
     </section>
-    
 </body>
 </html>

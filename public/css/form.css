@@ -16,7 +16,7 @@
     display: flex;
     flex-direction: row;
     justify-content: space-evenly;
-    margin: 0 auto;
+    margin: 3rem auto;
 }
 
 .container .login-container {
@@ -48,12 +48,25 @@
     margin-bottom: 0.6rem;
 }
 
-.input-box input {
+.input-box input ,textarea {
     padding: 0.4rem;
     width: 500px;
     font-size: 1.3rem;
     border-radius: 10px;
     border: 1px solid #33333347;
+    resize: none;
+}
+
+.input-box .preview-image {
+    margin: 1rem 0 1rem 0;
+    width: 90%;
+    height: auto;
+}
+
+.preview-image img {
+    display: none;
+    width: 100%;
+    height: 100%;
 }
 
 .input-box button {
@@ -84,7 +97,6 @@
     transition: all 0.07s ease-in;
     text-decoration: none;
     color: #333;
-    margin: 0 auto;
     margin: 46rem;
 }
 

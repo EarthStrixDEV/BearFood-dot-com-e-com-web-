@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../css/form.css">
+    <title>Add Product</title>
+</head>
+<body>
+    <h1 class="header-page-text">Add Products</h1>
+    <div class="container">
+        <div class="login-container">
+            <form action="" method="post">
+                <fieldset>
+                    <legend>Product Info</legend>
+                    <span class="input-box">
+                        <p for="">Name</p>
+                        <input type="text" name="prod_name" id="prod_name" required>
+                    </span>
+                    <span class="input-box">
+                        <p for="">Description</p>
+                        <textarea name="prod_description" id="prod_description" cols="60" rows="10"></textarea>
+                    </span>
+                    <span class="input-box">
+                        <p for="">Price</p>
+                        <input type="text" name="prod_price" id="prod_price" required>
+                    </span>
+                    <span class="input-box">
+                        <p for="">Store's Name</p>
+                        <input type="text" name="prod_store" id="prod_store" required>
+                    </span>
+                    <span class="input-box">
+                        <p for="">Image</p>
+                        <input type="file" name="prod_image" id="prod_image" required>
+                        <div class="preview-image">
+                            <img src="" alt="preview">
+                        </div>
+                        <small>Preview Image</small>
+                    </span>
+                    <span class="input-box">
+                        <button type="submit">Submit</button>
+                    </span>
+                </fieldset>
+            </form>
+        </div>
+    </div>
+    <a href="/home/" class="return-href">Return to Home Page</a>
+    <script src="../js/addproduct.js"></script>
+</body>
+</html>
