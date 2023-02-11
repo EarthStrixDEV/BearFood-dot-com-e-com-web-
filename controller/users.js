@@ -20,34 +20,32 @@ router.get("/users_admin", (req, res) => {
         res.sendStatus(400).send("Data has not found!");
     }
 });
-router.post("/login_", (req, res) => {
-    const username = req.body.username;
-    const password = req.body.password;
-    let Query = `SELECT * FROM users WHERE user_username = '${username}' AND user_password = '${password}'`;
+router.get('/edit/:id', (req, res) => {
+    const id = req.params.id;
+    console.log(id);
+})
+router.get('/delete/:id', (req, res) => {
+    const id = req.params.id;
+    let Query = `DELETE FROM users WHERE user_id = ${ id }`
     try {
         sqlConnector.query(Query, (err, result) => {
             if (err) throw err;
-            if (result.length > 0) {
-                req.session.loggedin = true;
-                req.session.username = result[0].user_username;
-                res.redirect("/home/");
-            } else {
-                res.sendStatus(400).send("Login Failed!");
-            }
-        });
+            console.log(result);
+            res.redirect('/users/users_admin')
+        })
     } catch (err) {
-        res.send(err);
+        res.sendStatus(400).send("Can't delete row record!!");
     }
-});
+})
 router.post("/register_", (req, res) => {
     const username = req.body.user_username;
     const fname = req.body.user_fname;
     const lname = req.body.user_lname;
-    let isSeller = req.body.user_seller;
     const email = req.body.user_email;
     const password = req.body.user_password;
+    let isSeller = 0;
 
-    if (isSeller == "on") {
+    if (req.body.user_seller == "on") {
         isSeller = 1;
     } else {
         isSeller = 0;
@@ -58,7 +56,7 @@ router.post("/register_", (req, res) => {
         sqlConnector.query(Query, (err, result) => {
             if (err) throw err;
             console.log(result);
-            res.redirect("/login/");
+            res.redirect("/users/login_register");
         });
     } catch (err) {
         res.sendStatus(400).send("Registration Failed!");

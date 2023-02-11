@@ -58,7 +58,8 @@ nav ul a:hover {
     border-radius: 20px;
 }
 
-nav ul a:active {
+nav ul a:active,
+i:active {
     background: #333;
     color: #fff;
     border-radius: 20px;

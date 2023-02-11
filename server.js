@@ -13,11 +13,14 @@ app.use(express.json())
 app.use(express.urlencoded({ extended: false }))
 app.set('views', path.join(__dirname, './public/html'))
 app.set('view engine', 'ejs')
-app.use(express_session({
-    secret: 'secret',
-    resave: true,
-    saveUninitialized:true
-}))
+app.use(
+  express_session({
+    secret: "thisisitNJDG",
+    resave: false,
+    cookie: { path: "/", httpOnly: true, secure: false, maxAge: 3600000 },
+    saveUninitialized: false,
+  })
+);
 
 app.use('/home', home)
 app.use('/users', users)
