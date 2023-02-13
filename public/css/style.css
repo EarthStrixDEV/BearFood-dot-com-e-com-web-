@@ -21,6 +21,33 @@ header {
     margin:1rem 0 2rem 0;
 }
 
+.ifNotLogin {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    line-height: 40px;
+}
+
+.logout {
+    border: 1px solid #333;
+    border-radius: 20px;
+    padding: 0.8rem 1rem 0.8rem 1rem;
+    margin:1rem auto;
+    text-decoration: none;
+    color:#333;
+    transition:all 0.05s ease-out;
+}
+
+.logout:hover {
+    background:#33333319;
+    box-shadow: 0 0 10px #3333333d;
+}
+
+.logout:active {
+    background-color: #333;
+    color:#fff;
+}
+
 .large-header {
     width: 80%;
     height: 80%;
@@ -167,7 +194,7 @@ header {
 /* section grid */
 section {
     display: grid;
-    grid-template-columns: repeat(4, 1fr);
+    grid-template-columns: repeat(auto-fill, minmax(300px ,1fr));
     grid-template-rows: repeat(2, 1fr);
     grid-gap: 2rem;
     padding: 0 10rem 0 10rem;

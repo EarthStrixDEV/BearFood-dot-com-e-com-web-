@@ -14,11 +14,13 @@
     <nav>
         <h2>Khai Kong Dot Com.</h2>
         <ul>
-            <a href="/home/" id="home">Home</a>
-            <a href="/home/popular">Popular</a>
-            <a href="/home/promotion">Promotion</a>
-            <a href="">Category</a>
-            <a href="">About</a>
+            <% if (username_session) { %>
+                <a href="/home/" id="home">Home</a>
+                <a href="/home/popular">Popular</a>
+                <a href="/home/promotion">Promotion</a>
+                <a href="">Category</a>
+                <a href="">About</a>
+            <% } %>
         </ul>
         <div class="icon-container">
             <span>
@@ -36,9 +38,13 @@
             <span>
                 <a href="/users/users_admin" style="color:rgba(31, 31, 31, 0.714);"><i class="fa fa-address-book" aria-hidden="true"></i></a>
             </span>
+            <% if (username_session) { %>
             <span>
-                <a href="/home/logout" style="color:rgba(31, 31, 31, 0.714);"><i class="fa fa-long-arrow-right" aria-hidden="true"></i></a>
+                <a href="/home/logout" style="color:rgba(31, 31, 31, 0.714);" onclick="return confirm('Are you sure to Logout??');"><i class="fa fa-long-arrow-right" aria-hidden="true"></i></a>
             </span>
+            <% } else { %>
+            <div></div>
+            <% } %>
         </div>
     </nav>
     <header>
@@ -110,8 +116,12 @@
         </div>
     </section>
     <% } else { %>
-        <h1>Please Login Again!!</h1>
-        <a href="/users/login_register">Login</a>
+        <div class="ifNotLogin">
+            <h1>Welcome To Khai Kong Dot Com</h1>
+            <p>Please Login before Visit Web Page</p>
+            <small>If you aren't regis to be member ,you can go to register to regis to be member</small>
+            <a href="/users/login_register" class="logout">Login</a>
+        </div>
     <% } %>
     <footer>
         <div class="payment">

@@ -5,7 +5,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD" crossorigin="anonymous">
-    <link rel="stylesheet" href="../css/products.css">
+    <link rel="stylesheet" href="../css/products.css" >
     <title>Admin System</title>
 </head>
 <body>
@@ -18,26 +18,30 @@
                         <h2>Total Users</h2>
                     </div>
                     <% Object.values(total_user).map((item) => { %>
-                         <div class="item-counter-label">
-                         <p><%= item.totalUser %></p>
-                         </div>
+                        <div class="item-counter-label">
+                            <p><%= item.totalUser %></p>
+                        </div>
                     <% }) %>
                 </div>
                 <div class="item-counter">
                     <div class="item-counter-numerics">
                         <h2>Total Customer</h2>
                     </div>
-                    <div class="item-counter-label">
-                        <p>0</p>
-                    </div>
+                    <% Object.values(total_customer).map((item) => { %>
+                        <div class="item-counter-label">
+                            <p><%= item.totalCustomer %></p>
+                        </div>
+                    <% }) %>            
                 </div>
                 <div class="item-counter">
                     <div class="item-counter-numerics">
                         <h2>Total Seller</h2>
                     </div>
-                    <div class="item-counter-label">
-                        <p>0</p>
-                    </div>
+                    <% Object.values(total_seller).map((item) => { %>
+                        <div class="item-counter-label">
+                            <p><%= item.totalSeller %></p>
+                        </div>
+                    <% }) %>
                 </div>
             </div>
             <div class="header-item-adder">
@@ -54,6 +58,8 @@
                     <th>user_fname</th>
                     <th>user_lname</th>
                     <th>user_email</th>
+                    <th></th>
+                    <th></th>
                 </tr>
             </thead>
             <tbody>
@@ -65,7 +71,7 @@
                         <td><%= item.user_fname %></td>
                         <td><%= item.user_lname %></td>
                         <td><%= item.user_email %></td>
-                        <td><a href="/users/edit/<%= item.user_id %>" class="btn btn-primary">Edit</a></td>
+                        <td><a href="/users/edit/user_id=<%= item.user_id %>" class="btn btn-primary">Edit</a></td>
                         <td><a href="/users/delete/<%= item.user_id %>" class="btn btn-danger" onclick="return confirm('Are you sure you want to delete this user?')">Delete</a</td>
                     </tr>
                 <% }) %>

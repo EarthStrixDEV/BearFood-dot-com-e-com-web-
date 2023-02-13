@@ -22,6 +22,7 @@ app.use(
   })
 );
 
+// set controller
 app.use('/home', home)
 app.use('/users', users)
 app.use('/product', product)

@@ -89,6 +89,29 @@
     color: #fff;
 }
 
+.password-strength {
+    display: none;
+    margin: 0.8rem 0 0 0;
+}
+
+.password-strength strong {
+    font-size: 1rem;
+}
+
+.password-strength-meter {
+    display: flex;
+    flex-direction: row;
+    justify-content:space-between;
+    width: 500px;
+    height: 15px;
+    margin: 10px 0 0 0;
+}
+
+.password-strength-meter span {
+    width:70px;
+    background-color: #33333324;
+}
+
 .return-href {
     cursor: pointer;
     padding: 1rem;
