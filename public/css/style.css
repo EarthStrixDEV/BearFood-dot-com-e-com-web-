@@ -202,7 +202,7 @@ section {
 
 .item-section {
     width: 380px;
-    height: 430px;
+    height: 450px;
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -227,5 +227,26 @@ section {
 
 .item-section strong {
     margin: 1rem 0 0 0;
+}
+
+.item-section button {
+    width: 130px;
+    height: 67px;
+    margin-top: 1rem;
+    border:1px solid #33333385;
+    border-radius: 15px;
+    background-color: #fff;
+    cursor: pointer;
+}
+
+.item-section button:hover {
+    background-color: #33333321;
+    box-shadow: 0 0 10px #33333321;
+    transition: all 0.05s ease-in;
+}
+
+.item-section button:active {
+    background-color: #333;
+    color: #fff;
 }
 

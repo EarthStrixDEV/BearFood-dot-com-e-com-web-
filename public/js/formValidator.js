@@ -18,27 +18,37 @@ var numbers = /[0-9]/g;
 var email_letter = /^[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)*$/;
 
 form_register.addEventListener('submit', (event) => {
-    let isError = false;
+    event.preventDefault()
+    let isEmailError = false;
+    let isPasswordError = false;
     if (!user_email.value.match(email_letter)) {
         email_validator_label.innerHTML = "Email is invalid";
-        email_validator_label.style.color = 'red';
-        isError = true;
+        email_validator_label.style.color = "red";
+        isEmailError = true;
     } else {
         email_validator_label.innerHTML = "";
-        isError = false;
-    }   
-
-    if (user_password.value.length <= 8) {
-        alert("Password must minimum 8 character")
-        isError = true;
-    } else {
-        isError = false;
+        isEmailError = false;
     }
 
-    if (isError) {
-        alert("Have something wrong in form!")
+    if (user_password.value.length <= 8) {
+        isPasswordError = true;
     } else {
-        alert("Form has submitted!")
+        isPasswordError = false;
+    }
+
+    if (isEmailError || isPasswordError) {
+      Swal.fire({
+        icon: "error",
+        title: "Form Submit Failed",
+        text: "Something went wrong in form!",
+      });
+      return false;
+    } else {
+      Swal.fire({
+        icon: "success",
+        title: "Form Submitted!",
+        text: "form submit successfully!",
+      });
     }
 })
 
