@@ -13,7 +13,23 @@
         <div class="login-container">
             <form action="/home/login_" method="post">
                 <fieldset>
-                    <legend>Login</legend>
+                    <legend>Login For Customer</legend>
+                    <span class="input-box">
+                        <p for="">Username</p>
+                        <input type="text" name="username" id="username" required>
+                    </span>
+                    <span class="input-box">
+                        <p for="">Password</p>
+                        <input type="password" name="password" id="password" required>
+                    </span>
+                    <span class="input-box">
+                        <button type="submit">Sign In</button>
+                    </span>
+                </fieldset>
+            </form>
+            <form action="/home/login_seller" method="post" style="margin-top: 2rem;">
+                <fieldset>
+                    <legend>Login For Seller</legend>
                     <span class="input-box">
                         <p for="">Username</p>
                         <input type="text" name="username" id="username" required>

@@ -7,13 +7,34 @@ const router = express.Router()
 router.post("/login_", (req, res) => {
     const username = req.body.username;
     const password = req.body.password;
-    let Query = `SELECT * FROM users WHERE user_username = '${username}' AND user_password = '${password}'`;
+    let Query = `SELECT * FROM users WHERE user_username = '${username}' AND user_password = '${password}';`
     try {
         sqlConnector.query(Query, (err, result) => {
         if (err) throw err;
         if (result.length > 0) {
             req.session.loggedIn = true;
             req.session.username = result[0].user_username;
+            res.redirect('/home/')
+        } else {
+            res.send(
+            '<script>alert("Email or Password is incorrect!"); window.location.href = "/users/login_register";</script>'
+            );
+        }
+        });
+    } catch (err) {
+        res.send(err);
+    }
+});
+router.post("/login_seller", (req, res) => {
+    const username = req.body.username;
+    const password = req.body.password;
+    let Query = `SELECT * FROM users WHERE user_username = '${username}' AND user_password = '${password}' AND user_seller_ = 1;`
+    try {
+        sqlConnector.query(Query, (err, result) => {
+        if (err) throw err;
+        if (result.length > 0) {
+            req.session.loggedIn = true;
+            req.session.seller = result[0].user_username;
             res.redirect('/home/')
         } else {
             res.send(
@@ -35,6 +56,7 @@ router.get('/logout', (req, res) => {
 router.get('/', (req, res) => {
     res.render("page", {
         username_session: req.session.username,
+        seller_session: req.session.seller
     });
 })
 router.get('/popular', (req, res) => {

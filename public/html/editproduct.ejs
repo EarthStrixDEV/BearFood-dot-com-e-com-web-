@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Fredoka+One&display=swap');
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Fredoka One', cursive;
+        }
+
+        .container {
+            max-width: 960px;
+            margin: 0 auto;
+        }
+
+        .head-text {
+            margin: 1rem 0 1rem 0;
+        }
+
+        .form-container {
+            width: 500px;
+            height: auto;
+        }
+
+        .form-control {
+            padding:1rem 0 1rem 0;
+        }
+
+        .form-control input {
+            width: 600px;
+            height: 70px;
+            font-size: 1.4rem;
+            border-radius: 10px;
+            border: 1px solid #33333349;
+            padding: 1rem;
+        }
+        
+        .form-control p {
+            padding: 0.6rem 0 0.6rem 0;
+            font-size: 1.2rem;
+        }
+
+        .form-control textarea {
+            resize: none;
+            font-size: 1.2rem;
+            padding:1em;
+            border: 1px solid #33333349;
+            border-radius: 15px;
+        }
+
+        .form-control button {
+            width: 120px;
+            height: 60px;
+            border:1px solid #333;
+            border-radius: 15px;
+            cursor: pointer;
+            background-color: #fff;
+            font-size: 1rem;
+            transition: all 0.05s ease-out;
+        }
+
+        .form-control button:hover {
+            box-shadow: 0 0 12px #33333348;
+        }
+
+        .form-control button:active {
+            background-color: #333;
+            color: #fff;
+        }
+
+        .return-admin {
+            text-decoration: none;
+            color: #333;
+            padding: 1rem;
+            border-bottom: 1px solid #333;
+            margin-top: 2rem;
+            transition: all 0.06s ease-in;
+        }
+
+        .return-admin:hover {
+            border-bottom: 3px solid #333;
+            background-color: #33333318;
+        }
+
+        .return-admin:active {
+            background-color: #333;
+            color: #fff;
+        }
+    </style>
+    <title>Edit Product</title>
+</head>
+<body>
+    <div class="container">
+        <h1 class="head-text">Edit Product Data</h1>
+        <hr>
+        <div class="form-container">
+            <form action="/product/editProduct" method="post">
+                <% Object.values(data).map((data) => { %>
+                <input type="hidden" name="edit_prod_id" value="<%= data.prod_id %>">
+                <div class="form-control">
+                    <p>Name</p>
+                    <input type="text" name="edit_username" id="edit_prod_username" value="<%= data.prod_name %>">
+                </div>
+                <div class="form-control">
+                    <p>Description</p>
+                    <textarea name="edit_fname" id="edit_prod_fname" value="<%= data.prod_description %>" cols="65" rows="15"></textarea>
+                </div>
+                <div class="form-control">
+                    <p>Price</p>
+                    <input type="text" name="edit_lname" id="edit_prod_lname" value="<%= data.prod_price %>">
+                </div>
+                <div class="form-control">
+                    <p>Seller</p>
+                    <input type="text" name="edit_email" id="edit_prod_email" value="<%= data.prod_store %>">
+                </div>
+                <div class="form-control">
+                    <p>Image</p>
+                    <input type="file" name="edit_password" id="edit_prod_password" value="<%= data.prod_image %>">
+                </div>
+                <% }) %>
+                <div class="form-control">
+                    <button type="submit">Done</button>
+                </div>
+                <div class="form-control">
+                    <a href="/product/" class="return-admin">Return To Product Manager</a>
+                </div>
+            </form>
+        </div>
+    </div>
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+</body>
+</html>

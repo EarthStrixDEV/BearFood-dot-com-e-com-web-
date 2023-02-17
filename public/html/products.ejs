@@ -17,9 +17,11 @@
                     <div class="item-counter-numerics">
                         <h2>Total Products</h2>
                     </div>
+                    <% Object.values(total_product).map((item) => { %>
                     <div class="item-counter-label">
-                        <p>0</p>
+                        <p><%= item.total_product %></p>
                     </div>
+                    <% }) %>
                 </div>
                 <div class="item-counter">
                     <div class="item-counter-numerics">
@@ -47,7 +49,10 @@
                 </div>
             </div>
             <div class="header-item-adder">
-                <a href="/login/add_product">Add Product</a>
+                <a href="/product/add_products">Add Product</a>
+            </div>
+            <div class="header-item-adder">
+                <a href="/home/">Return To Home</a>
             </div>
         </div>
     </header>
@@ -60,23 +65,29 @@
                     <th>Description</th>
                     <th>Price</th>
                     <th>Store</th>
+                    <th>Date</th>
                     <th>Order</th>
+                    <th></th>
+                    <th></th>
                 </tr>
             </thead>
             <tbody>
                 <% Object.values(data).forEach((item) => { %>
                     <tr>
-                        <td><%= item.id %></td>
-                        <td><%= item.name %></td>
-                        <td><%= item.description %></td>
-                        <td><%= item.price %></td>
-                        <td><%= item.store %></td>
-                        <td><%= item.order %></td>
+                        <td><%= item.prod_id %></td>
+                        <td><%= item.prod_name %></td>
+                        <td><%= item.prod_description %></td>
+                        <td><%= item.prod_price %></td>
+                        <td><%= item.prod_store %></td>
+                        <td><%= item.prod_date %></td>
+                        <td></td>
+                        <td><a href="/product/edit/product_id=<%= item.prod_id %>" class="btn btn-primary">Edit</a></td>
+                        <td><a href="/product/delete/product_id=<%= item.prod_id %>" class="btn btn-danger">Delete</a></td>
                     </tr>
                 <% }) %>
             </tbody>
         </table>
     </section>
-    
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
 </body>
 </html>

@@ -80,6 +80,19 @@ router.post("/register_", (req, res) => {
         isSeller = 0;
     }
 
+    let query_email = `SELECT user_email FROM users`
+    sqlConnector.query(query_email, (err, result) => {
+        if (err) throw err;
+        Object.values(result).forEach((data) => {
+            if (data.user_email === email) {
+                res.send('<h1>Email has already to used</h1>')
+                return false;
+            } else {
+                return true;
+            }
+        })
+    })
+
     let Query = `INSERT INTO users (user_fname ,user_lname ,user_username ,user_seller_ ,user_email ,user_password) VALUES ('${fname}' ,'${lname}' ,'${username}' ,${isSeller} ,'${email}','${password}')`;
     try {
         sqlConnector.query(Query, (err, result) => {

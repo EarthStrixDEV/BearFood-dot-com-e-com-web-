@@ -14,7 +14,7 @@
     <nav>
         <h2>Khai Kong Dot Com.</h2>
         <ul>
-            <% if (username_session) { %>
+            <% if (username_session || seller_session) { %>
                 <a href="/home/" id="home">Home</a>
                 <a href="/home/popular">Popular</a>
                 <a href="/home/promotion">Promotion</a>
@@ -32,10 +32,17 @@
             <span>
                 <i class="fa fa-heart" aria-hidden="true"></i>
             </span>
+            <% if (seller_session) { %>
+                <span>
+                    <a href="/product/" style="color:rgba(31, 31, 31, 0.714);"><i class="fa fa-cart-plus" aria-hidden="true"></i></a>
+                </span>
+            <% } else { %>
+                <div></div>
+            <% } %>
             <span>
                 <a href="/users/users_admin" style="color:rgba(31, 31, 31, 0.714);"><i class="fa fa-address-book" aria-hidden="true"></i></a>
             </span>
-            <% if (username_session) { %>
+            <% if (username_session || seller_session) { %>
             <span>
                 <a href="/home/logout" style="color:rgba(31, 31, 31, 0.714);" onclick="return confirm('Are you sure to Logout??');"><i class="fa fa-long-arrow-right" aria-hidden="true"></i></a>
             </span>
@@ -45,10 +52,17 @@
         </div>
     </nav>
     <header>
-        <% if (username_session) { %>
+        <% if (username_session || seller_session) { %>
         <div class="welcome-block">
-            <h1>Welcome ,<%= username_session %></h1>
-            <p>Let's to explore heaven of food'</p>
+            <% if (seller_session) { %>
+                <h1>Welcome ,<%= seller_session %></h1>
+                <p>Let's to explore heaven of food'</p>
+            <% } else if (username_session) { %>
+                <h1>Welcome ,<%= username_session %></h1>
+                <p>Let's to explore heaven of food'</p>
+            <% } else { %>
+                <div></div>
+            <% } %>
         </div>
         <div class="large-header">
             <div class="left-text-header">
@@ -75,49 +89,49 @@
             <img src="https://cdn.pixabay.com/photo/2016/03/23/15/00/ice-cream-1274894_960_720.jpg" alt="">
             <p>Ice Creme</p>
             <strong>$1.99</strong>
-            <button>Add to Cart</button>
+            <button class="add-to-cart">Add to Cart</button>
         </div>
         <div class="item-section">
             <img src="https://cdn.pixabay.com/photo/2017/07/28/14/29/macarons-2548827_960_720.jpg" alt="">
             <p>Magarong</p>
             <strong>$2.89</strong>
-            <button>Add to Cart</button>
+            <button class="add-to-cart">Add to Cart</button>
         </div>
         <div class="item-section">
             <img src="https://cdn.pixabay.com/photo/2015/07/12/14/26/coffee-842020_960_720.jpg" alt="">
             <p>Bread & Coffee</p>
             <strong>$3.99</strong>
-            <button>Add to Cart</button>
+            <button class="add-to-cart">Add to Cart</button>
         </div>
         <div class="item-section">
             <img src="https://cdn.pixabay.com/photo/2016/03/27/21/59/bread-1284438_960_720.jpg" alt="">
             <p>Bread Kau Song</p>
             <strong>$0.99</strong>
-            <button>Add to Cart</button>
+            <button class="add-to-cart">Add to Cart</button>
         </div>
         <div class="item-section">
             <img src="https://cdn.pixabay.com/photo/2017/05/23/22/33/birthday-2338813_960_720.jpg" alt="">
             <p>Birthday Cake</p>
             <strong>$3.50</strong>
-            <button>Add to Cart</button>
+            <button class="add-to-cart">Add to Cart</button>
         </div>
         <div class="item-section">
             <img src="https://cdn.pixabay.com/photo/2016/12/15/03/27/cocoa-1908020_960_720.jpg" alt="">
             <p>Cocoa</p>
             <strong>$1.39</strong>
-            <button>Add to Cart</button>
+            <button class="add-to-cart">Add to Cart</button>
         </div>
         <div class="item-section">
             <img src="https://cdn.pixabay.com/photo/2016/10/25/12/56/almonds-1768792_960_720.jpg" alt="">
             <p>Almond</p>
             <strong>$1.29</strong>
-            <button>Add to Cart</button>
+            <button class="add-to-cart">Add to Cart</button>
         </div>
         <div class="item-section">
             <img src="https://cdn.pixabay.com/photo/2016/01/11/07/18/cupcakes-1133146_960_720.jpg" alt="">
             <p>Cup Cake</p>
             <strong>$2.99</strong>
-            <button>Add to Cart</button>
+            <button class="add-to-cart">Add to Cart</button>
         </div>
     </section>
     <% } else { %>
@@ -164,6 +178,7 @@
             </div>
         </div>
     </footer>
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
     <script src="../js/script.js"></script>
 </body>
 </html>

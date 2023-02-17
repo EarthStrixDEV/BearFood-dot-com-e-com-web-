@@ -11,16 +11,17 @@
     <h1 class="header-page-text">Add Products</h1>
     <div class="container">
         <div class="login-container">
-            <form action="" method="post">
+            <form action="/product/add_product" method="post" class="form-add-product">
                 <fieldset>
                     <legend>Product Info</legend>
+                    <input type="hidden" class="date-add-item" name="prod_date">
                     <span class="input-box">
                         <p for="">Name</p>
                         <input type="text" name="prod_name" id="prod_name" required>
                     </span>
                     <span class="input-box">
                         <p for="">Description</p>
-                        <textarea name="prod_description" id="prod_description" cols="60" rows="10"></textarea>
+                        <textarea name="prod_description" id="prod_description" cols="60" rows="10" required></textarea>
                     </span>
                     <span class="input-box">
                         <p for="">Price</p>
@@ -32,7 +33,7 @@
                     </span>
                     <span class="input-box">
                         <p for="">Image</p>
-                        <input type="file" name="prod_image" id="prod_image" required>
+                        <input type="file" name="prod_image" id="prod_image">
                         <div class="preview-image">
                             <img src="" alt="preview">
                         </div>
@@ -45,7 +46,8 @@
             </form>
         </div>
     </div>
-    <a href="/home/" class="return-href">Return to Home Page</a>
+    <a href="/product/" class="return-href">Return to Home Page</a>
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
     <script src="../js/addproduct.js"></script>
 </body>
 </html>
