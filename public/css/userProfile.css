@@ -1,0 +1,182 @@
+@import url('https://fonts.googleapis.com/css2?family=Fredoka+One&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Fredoka One', cursive;
+}
+
+.container {
+    max-width: 1024px;
+    height: 150vh;
+    margin: 2em auto;
+    padding: 1em 2em 1em 2em;
+    background-color: #33333310;
+}
+
+.main-section {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly; 
+}
+
+.header-page {
+    background-color: #ffffff72;
+    border-radius: 20px;
+    padding: 1.5em 2em 0 2em;
+}
+
+.header-page .header-page-text {
+    line-height: 40px;
+    letter-spacing: 1px;
+    border-bottom: 1px solid #33333321;
+    margin-bottom: 2em;
+    text-align: center;
+}
+
+.header-page .user_image {
+    width: 400px;
+    height: 400px;
+}
+
+.header-page .user_image img {
+    width: 100%;
+    height: 100%;
+    border-radius: 50%;
+    object-fit:cover;
+}
+
+.section_page {
+    padding: 1.5em 2em 0 2em;
+    text-align: center;
+    background-color: #ffffff72;
+    border-radius: 20px;
+}
+
+.section_page .section-page-text {
+    padding: 1em 0 1em 0;
+    border-bottom:1px solid #33333321;
+}
+
+.section_page .user_data {
+    margin-top: 2em;
+    line-height: 2em;
+}
+
+.footer_page {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 2em;
+    padding: 2em;
+}
+
+.cart-history {
+    width:600px;
+    height: auto;
+    margin-right: 2em;
+    padding: 1em 0 1em 0;
+    height: 400px;
+    overflow-y: scroll;
+    scroll-behavior: smooth;
+    background-color: #fff;
+    border-radius: 20px;
+}
+
+.cart-history .cart-history-list {
+    padding: 1em 2em 1em 2em;
+}
+
+.cart-history .cart-history-list:hover {
+    background-color: rgba(228, 219, 219, 0.761);
+    cursor: pointer;
+}
+
+.address-customer-info {
+    width: 700px;
+    background-color: #fff;
+    padding: 1em;
+    border-radius: 20px;
+}
+
+.edit-address-btn,
+.edit-address button {
+    cursor: pointer;
+    padding:0.8em ;
+    margin: 0.7em 0 1em 0;
+    border: none;
+    background-color: #fff;
+    transition: all 0.1s ease-out;
+}
+
+.edit-address-btn:hover,
+.edit-address button:hover {
+    outline: 1px dashed #333;
+    background-color: #e8c3c353;
+}
+
+.edit-address-btn:active,
+.edit-address button:active {
+    background-color: #333;
+    color: #fff;
+}
+
+.edit-address {
+    display: none;
+}
+
+.edit-address p {
+    margin: 0.8em 0 0.8em 0;
+}
+
+.edit-address input {
+    padding: 0.7em;
+    border: 1px solid #33333321;
+    border-radius: 10px;
+    font-size: 1em;
+}
+
+.edit-address input:hover,
+.edit-address input:focus {
+    box-shadow: inset 0 1px 10px #33333331;
+    outline: none;
+}
+
+.edit-address textarea {
+    resize: none;
+    padding: 0.9em;
+    border: 1px solid #33333321;
+    border-radius: 10px;
+    font-size: 1em;
+}
+
+.edit-address textarea:hover ,
+.edit-address textarea:focus {
+    box-shadow: inset 0 1px 10px #33333331;
+    outline: none;
+}
+
+.btn-return-homepage-section {
+    position: absolute;
+    top: 149.75vh;
+    left: 77vh;
+    transform: translate(40%);
+}
+
+.btn-return-homepage-section a {
+    text-decoration: none;
+    color: #333;
+    padding: 1em;
+    border-top-left-radius: 15px;
+    border-top-right-radius: 15px;
+    transition: all 0.05s ease-in;
+}
+
+.btn-return-homepage-section a:hover {
+    background-color: #e8c3c353;
+}
+
+.btn-return-homepage-section a:active {
+    background-color: #333;
+    color: #fff;
+}

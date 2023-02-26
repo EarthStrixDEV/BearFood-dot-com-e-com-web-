@@ -12,33 +12,7 @@
     <title>Popular</title>
 </head>
 <body>
-    <nav>
-        <h2>Khai Kong Dot Com.</h2>
-        <ul>
-            <a href="/home/" id="home">Home</a>
-            <a href="/home/popular">Popular</a>
-            <a href="/home/promotion">Promotion</a>
-            <a href="">Category</a>
-            <a href="">About</a>
-        </ul>
-        <div class="icon-container">
-            <span>
-                <i class="fa fa-search"></i>
-            </span>
-            <span>
-                <i class="fa fa-shopping-cart"></i>
-            </span>
-            <span>
-                <i class="fa fa-heart" aria-hidden="true"></i>
-            </span>
-            <span>
-                <a href="/users/login_register" style="color: #333;"><i class="fa fa-user" aria-hidden="true"></i></a>
-            </span>
-            <span>
-                <a href="/users/users_admin" style="color: #333;"><i class="fa fa-address-book" aria-hidden="true"></i></a>
-            </span>
-        </div>
-    </nav>
+    <%- include('navbar') %>
     <div class="owl-carousel">
         <div>
             <img src="https://images.pexels.com/photos/905847/pexels-photo-905847.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1" alt="">
@@ -62,28 +36,29 @@
         <p>Enjoy you favorite menu for everyday</p>
         <small>Presentation by pexels</small>
     </div>
+    <div class="grid-category-name">
+        <h2>Food Category</h2>
+    </div>
     <div class="grid-category">
         <div class="grid-category-item">
             <img src="https://images.pexels.com/photos/2725744/pexels-photo-2725744.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1" alt="" class="grid-category-image">
             <h2 class="grid-category-topic">Fast Food</h2>
         </div>
-        <div class="grid-category-nested">
-            <div class="grid-category-item">
-                <img src="https://images.pexels.com/photos/2132942/pexels-photo-2132942.png?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1" alt="" class="grid-category-image">
-                <h2 class="grid-category-topic">Spicy</h2>
-            </div>
-            <div class="grid-category-item">
-                <img src="https://images.pexels.com/photos/1126359/pexels-photo-1126359.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1" alt="" class="grid-category-image">
-                <h2 class="grid-category-topic">Dessert</h2>
-            </div>
-            <div class="grid-category-item">
-                <img src="https://images.pexels.com/photos/1233319/pexels-photo-1233319.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1" alt="" class="grid-category-image">
-                <h2 class="grid-category-topic">Drinks</h2>
-            </div>
-            <div class="grid-category-item">
-                <img src="https://images.pexels.com/photos/15185900/pexels-photo-15185900.jpeg?auto=compress&cs=tinysrgb&w=1600" alt="" class="grid-category-image">
-                <h2 class="grid-category-topic">Steak</h2>
-            </div>
+        <div class="grid-category-item">
+            <img src="https://images.pexels.com/photos/2132942/pexels-photo-2132942.png?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1" alt="" class="grid-category-image">
+            <h2 class="grid-category-topic">Spicy</h2>
+        </div>
+        <div class="grid-category-item">
+            <img src="https://images.pexels.com/photos/1126359/pexels-photo-1126359.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1" alt="" class="grid-category-image">
+            <h2 class="grid-category-topic">Dessert</h2>
+        </div>
+        <div class="grid-category-item">
+            <img src="https://images.pexels.com/photos/1233319/pexels-photo-1233319.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1" alt="" class="grid-category-image">
+            <h2 class="grid-category-topic">Drinks</h2>
+        </div>
+        <div class="grid-category-item">
+            <img src="https://images.pexels.com/photos/15185900/pexels-photo-15185900.jpeg?auto=compress&cs=tinysrgb&w=1600" alt="" class="grid-category-image">
+            <h2 class="grid-category-topic">Steak</h2>
         </div>
     </div>
     <div class="popular-food-cover">

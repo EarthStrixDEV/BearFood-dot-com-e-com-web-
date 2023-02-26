@@ -1,0 +1,136 @@
+@import url('https://fonts.googleapis.com/css2?family=Fredoka+One&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Fredoka One', cursive;
+    letter-spacing: 0.5px;
+}
+
+.header-name {
+    text-align: center;
+}
+
+.container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    max-width: 1024px;
+    margin: 1em auto;
+    background-color: #d4bebe4b;
+}
+
+.list-item {
+    margin:0.8em;
+    padding: 1em;
+    background-color: #fff;
+    border: 1px solid #33333336;
+}
+
+.list-item table {
+    max-width: 1000px;
+    border-collapse: collapse;
+}
+
+.list-item table thead {
+    text-align: center;
+    height: 100px;
+    overflow-y: hidden;
+}
+
+.list-item table th ,tbody tr td {
+    padding: 1.2em;
+    text-align: center;
+    border-bottom: 1px solid #b1a4a44b;
+}
+
+.counter-price-item {
+    width: 100%;
+    padding: 0.8em;
+    display: flex;
+    justify-content: space-between;
+}
+
+.counter-price-item .count-price-box {
+    display: inline-flex;
+    background-color: #fff;
+    border:1px solid #33333336;
+}
+
+.counter-price-item .count-price-box .count-label,.total-price {
+    padding: 1em;
+}
+
+.operation-paying {
+    padding: 0 1em 0 1em;
+    width:100%;
+    display: flex;
+    justify-content: space-between;
+}
+
+.text-promotion {
+    margin: 1em 0 1em 0;
+}
+
+.enter-promo input {
+    width: 300px;
+    padding: 0.6em;
+    border: 1px solid #33333321;
+    border-top-left-radius: 10px;
+    border-bottom-left-radius: 10px;
+    font-size: 1em;
+}
+
+.enter-promo input:hover,
+.enter-promo input:focus {
+    box-shadow: inset 0 1px 10px #33333331;
+    outline: none;
+}
+
+.enter-promo button {
+    width: 180px;
+    padding: 0.6em;
+    border-top: 1px solid #33333321;
+    border-right: 1px solid #33333321;
+    border-bottom: 1px solid #33333321;
+    border-left: none;
+    border-top-right-radius: 10px;
+    border-bottom-right-radius: 10px;
+    font-size: 1em;
+    cursor: pointer;
+    transition: all 0.07s ease-in;
+}
+
+.enter-promo button:hover {
+    background-color: #3333331f;
+}
+
+.enter-promo button:active {
+    background-color: #333;
+    color: #fff;
+}
+
+.btn-operation-cart {
+    display: flex;
+    flex-direction: column;
+    margin: 1em auto;
+}
+
+.btn-operation-cart button {
+    padding: 0.7em;
+    margin-bottom: 1em;
+    border:1px solid #3333331f;
+    border-radius: 12px;
+    cursor: pointer;
+    transition: all 0.07s ease-in;
+}
+
+.btn-operation-cart button:hover {
+    background-color: #33333312;
+}
+
+.btn-operation-cart button:active {
+    background-color: #333;
+    color: #fff;
+}

@@ -4,16 +4,16 @@ const sqlConnector = require('../model/products')
 const {render} = require('ejs')
 const router = express.Router()
 
-router.post("/login_", (req, res) => {
+router.post("/login_customer", (req, res) => {
     const username = req.body.username;
     const password = req.body.password;
-    let Query = `SELECT * FROM users WHERE user_username = '${username}' AND user_password = '${password}';`
+    let Query = `SELECT * FROM customer WHERE customer_username = '${username}' AND customer_password = '${password}';`
     try {
         sqlConnector.query(Query, (err, result) => {
         if (err) throw err;
         if (result.length > 0) {
             req.session.loggedIn = true;
-            req.session.username = result[0].user_username;
+            req.session.customer = result[0].customer_username;
             res.redirect('/home/')
         } else {
             res.send(
@@ -22,19 +22,19 @@ router.post("/login_", (req, res) => {
         }
         });
     } catch (err) {
-        res.send(err);
+        res.sendStatus(400).send(err)
     }
 });
 router.post("/login_seller", (req, res) => {
     const username = req.body.username;
     const password = req.body.password;
-    let Query = `SELECT * FROM users WHERE user_username = '${username}' AND user_password = '${password}' AND user_seller_ = 1;`
+    let Query = `SELECT * FROM seller WHERE seller_username = '${username}' AND seller_password = '${password}';`
     try {
         sqlConnector.query(Query, (err, result) => {
         if (err) throw err;
         if (result.length > 0) {
             req.session.loggedIn = true;
-            req.session.seller = result[0].user_username;
+            req.session.seller = result[0].seller_username;
             res.redirect('/home/')
         } else {
             res.send(
@@ -43,7 +43,7 @@ router.post("/login_seller", (req, res) => {
         }
         });
     } catch (err) {
-        res.send(err);
+        res.sendStatus(400).send(err);
     }
 });
 router.get('/logout', (req, res) => {
@@ -55,14 +55,39 @@ router.get('/logout', (req, res) => {
 })
 router.get('/', (req, res) => {
     res.render("page", {
-        username_session: req.session.username,
-        seller_session: req.session.seller
+        customer: req.session.customer,
+        seller: req.session.seller
     });
 })
+router.get('/userProfile', (req, res) => {
+    let Query = `SELECT * FROM customer WHERE customer_username = '${ req.session.customer }'`;
+    try {
+        sqlConnector.query(Query, (err, result) => {
+            if (err) throw err;
+            res.render("userProfile", {
+                user_data: result
+            });
+        })
+    } catch (error) {
+        res.sendStatus(400).send(err)
+    }
+})
 router.get('/popular', (req, res) => {
-    res.sendFile(path.join(__dirname ,'../public/html/popular.html'))
+    res.render("popular", {
+        customer: req.session.customer,
+        seller: req.session.seller,
+    });
 })
 router.get('/promotion', (req, res) => {
-    res.sendFile(path.join(__dirname ,'../public/html/promotion.html'))
+    res.render("promotion", {
+        customer: req.session.customer,
+        seller: req.session.seller,
+    });
+})
+router.get('/cart', (req, res) => {
+    res.render("cart", {
+        customer: req.session.customer,
+        seller: req.session.seller,
+    });
 })
 module.exports = router;

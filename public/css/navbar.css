@@ -13,6 +13,7 @@ nav {
     justify-content: space-between;
     padding: 0.8rem 2rem 0.8rem 2rem;
     box-shadow: 0 1px 2px -1px;
+    background-color: #33333318;
 }
 
 nav h2 {
@@ -33,6 +34,7 @@ nav ul a {
     text-decoration: none;
     color: rgb(92, 92, 92);
     font-size: 1.3rem;
+    transition: all 0.05s ease-in;
 }
 
 nav ul a[id="home"] {
@@ -76,6 +78,7 @@ i:active {
     font-size: 1.5rem;
     color: rgb(92, 92, 92);
     width: 60px;
+    transition: all 0.075s ease-in;
 }
 
 .icon-container i {
@@ -83,6 +86,7 @@ i:active {
     position: relative;
     left: 30%;
     top: 15%;
+    transition: all 0.075s ease-in;
 }
 
 .icon-container span:hover {

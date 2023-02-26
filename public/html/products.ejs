@@ -72,7 +72,7 @@
                 </tr>
             </thead>
             <tbody>
-                <% Object.values(data).forEach((item) => { %>
+                <!-- <% Object.values(data).forEach((item) => { %>
                     <tr>
                         <td><%= item.prod_id %></td>
                         <td><%= item.prod_name %></td>
@@ -82,9 +82,9 @@
                         <td><%= item.prod_date %></td>
                         <td></td>
                         <td><a href="/product/edit/product_id=<%= item.prod_id %>" class="btn btn-primary">Edit</a></td>
-                        <td><a href="/product/delete/product_id=<%= item.prod_id %>" class="btn btn-danger">Delete</a></td>
+                        <td><a href="/product/delete/<%= item.prod_id %>" class="btn btn-danger" onclick="return confirm('Are you sure to delete this product?')">Delete</a></td>
                     </tr>
-                <% }) %>
+                <% }) %> -->
             </tbody>
         </table>
     </section>

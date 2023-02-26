@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../css/userProfile.css">
+    <title>Home - UserProfile</title>
+</head>
+<body>
+    <div class="container">
+        <div class="main-section">
+            <div class="header-page">
+                <div class="header-page-text">
+                    <h1>User Profile</h1>   
+                    <% Object.values(user_data).map((data) => { %>
+                    <h3><%= data.customer_username %></h3>
+                    <% }) %>
+                </div>
+                <div class="user_image">
+                    <img src="https://images.unsplash.com/flagged/photo-1570612861542-284f4c12e75f?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1470&q=80" alt="">
+                </div>
+            </div>
+            <div class="section_page">
+                <div class="section-page-text">
+                    <h1>Detail</h1>
+                </div>
+                <div class="user_data">
+                    <h2>Full Name</h2>
+                    <% Object.values(user_data).map((data) => { %>
+                    <p><%= data.customer_fname %> <%= data.customer_lname %></p>
+                    <% }) %>
+                </div>
+                <div class="user_data">
+                    <h2>E-mail</h2>
+                    <% Object.values(user_data).map((data) => { %>
+                    <p><%= data.customer_email %></p>
+                    <% }) %>
+                </div>
+            </div>
+        </div>
+        <div class="footer_page">
+            <div class="cart-history">
+                <div class="cart-history-list">
+                    <h3>Hamburger Double Cheese</h3>
+                    <p>Mcdonald</p>
+                    <strong>1.99 $</strong>
+                </div>
+                <div class="cart-history-list">
+                    <h3>Hamburger Double Cheese</h3>
+                    <p>Mcdonald</p>
+                    <strong>1.99 $</strong>
+                </div>
+                <div class="cart-history-list">
+                    <h3>Hamburger Double Cheese</h3>
+                    <p>Mcdonald</p>
+                    <strong>1.99 $</strong>
+                </div>
+                <div class="cart-history-list">
+                    <h3>Hamburger Double Cheese</h3>
+                    <p>Mcdonald</p>
+                    <strong>1.99 $</strong>
+                </div>
+            </div>
+            <div class="address-customer-info">
+                <% Object.values(user_data).map((data) => { %>
+                <h3><%= data.customer_place %></h3>
+                <p><%= data.customer_address %></p>
+                <button class="edit-address-btn">Change</button>
+                <div class="edit-address">
+                    <form action="/users/add-address" method="post">
+                        <p id="customer_place_label">Name Place / Builder</p>
+                        <input type="text" name="customer_place" id="customer_place" required>
+                        <p id="customer_address_label">Address Description</p>
+                        <textarea name="customer_address" id="customer_address" cols="33" rows="8" value=""></textarea>
+                        <input type="hidden" name="customer_username" value="<%= data.customer_username %>">
+                        <button type="submit">Done</button>
+                    </form>
+                </div>
+                <% }) %>
+            </div>
+        </div>
+        <div class="btn-return-homepage-section">
+            <a href="/home/" class="btn-return-homepage">Return To Home Page</a>
+        </div>
+    </div>
+    <script src="../js/userProfile.js"></script>
+</body>
+</html>

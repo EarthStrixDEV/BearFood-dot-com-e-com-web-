@@ -8,90 +8,129 @@
     <title>Login / Register</title>
 </head>
 <body>
-    <h1 class="header-page-text">Login / Register</h1>
-    <div class="container">
-        <div class="login-container">
-            <form action="/home/login_" method="post">
-                <fieldset>
-                    <legend>Login For Customer</legend>
-                    <span class="input-box">
-                        <p for="">Username</p>
-                        <input type="text" name="username" id="username" required>
-                    </span>
-                    <span class="input-box">
-                        <p for="">Password</p>
-                        <input type="password" name="password" id="password" required>
-                    </span>
-                    <span class="input-box">
-                        <button type="submit">Sign In</button>
-                    </span>
-                </fieldset>
-            </form>
-            <form action="/home/login_seller" method="post" style="margin-top: 2rem;">
-                <fieldset>
-                    <legend>Login For Seller</legend>
-                    <span class="input-box">
-                        <p for="">Username</p>
-                        <input type="text" name="username" id="username" required>
-                    </span>
-                    <span class="input-box">
-                        <p for="">Password</p>
-                        <input type="password" name="password" id="password" required>
-                    </span>
-                    <span class="input-box">
-                        <button type="submit">Sign In</button>
-                    </span>
-                </fieldset>
-            </form>
-        </div>
-        <div class="login-container">
-            <form action="/users/register_" method="post" class="form-register">
-                <fieldset>
-                    <legend>Register</legend>
-                    <span class="input-box">
-                        <p for="">Username</p>
-                        <input type="text" name="user_username" id="user_username" spellcheck="true" required>
-                    </span>
-                    <span class="input-box">
-                        <p for="">First Name</p>
-                        <input type="text" name="user_fname" id="user_fname" required>
-                    </span>
-                    <span class="input-box">
-                        <p for="">Last Name</p>
-                        <input type="text" name="user_lname" id="user_lname" required>
-                    </span>
-                    <span class="input-box">
-                        <p for="">Email</p>
-                        <input type="text" name="user_email" id="user_email" required>
-                    </span>
-                    <strong class="email-validator-label"></strong>
-                    <span class="input-box">
-                        <p for="">Password</p>
-                        <input type="password" name="user_password" id="user_password" required>
-                        <div class="password-strength">
-                            <strong class="password-strength-lebel"></strong>
-                            <div class="password-strength-meter">
-                                <span class="meter"></span>
-                                <span class="meter"></span>
-                                <span class="meter"></span>
-                                <span class="meter"></span>
-                                <span class="meter"></span>
+    <div id="body-login">
+        <h1 class="header-page-text">Login / Register</h1>
+        <div class="container">
+            <div class="login-container">
+                <form action="/home/login_customer" method="post">
+                    <fieldset>
+                        <legend>Login For Customer</legend>
+                        <span class="input-box">
+                            <p for="">Username</p>
+                            <input type="text" name="username" id="username" required>
+                        </span>
+                        <span class="input-box">
+                            <p for="">Password</p>
+                            <input type="password" name="password" id="password" required>
+                        </span>
+                        <span class="input-box">
+                            <button type="submit">Sign In</button>
+                        </span>
+                    </fieldset>
+                </form>
+                <form action="/home/login_seller" method="post" style="margin-top: 2rem;">
+                    <fieldset>
+                        <legend>Login For Seller</legend>
+                        <span class="input-box">
+                            <p for="">Username</p>
+                            <input type="text" name="username" id="username" required>
+                        </span>
+                        <span class="input-box">
+                            <p for="">Password</p>
+                            <input type="password" name="password" id="password" required>
+                        </span>
+                        <span class="input-box">
+                            <button type="submit">Sign In</button>
+                        </span>
+                    </fieldset>
+                </form>
+            </div>
+            <div class="login-container">
+                <form action="/users/register_customer" method="post" class="form-register">
+                    <fieldset>
+                        <legend>Register For Customer</legend>
+                        <span class="input-box">
+                            <p for="">Username</p>
+                            <input type="text" name="customer_username" class="username" spellcheck="true" required>
+                        </span>
+                        <span class="input-box">
+                            <p for="">First Name</p>
+                            <input type="text" name="customer_fname" class="fname" required>
+                        </span>
+                        <span class="input-box">
+                            <p for="">Last Name</p>
+                            <input type="text" name="customer_lname" class="lname" required>
+                        </span>
+                        <span class="input-box">
+                            <p for="">Email</p>
+                            <input type="text" name="customer_email" class="email" required>
+                        </span>
+                        <strong class="email-validator-label"></strong>
+                        <span class="input-box">
+                            <p for="">Password</p>
+                            <input type="password" name="customer_password" class="password" required>
+                            <div class="password-strength">
+                                <strong class="password-strength-lebel"></strong>
+                                <div class="password-strength-meter">
+                                    <span class="meter"></span>
+                                    <span class="meter"></span>
+                                    <span class="meter"></span>
+                                    <span class="meter"></span>
+                                    <span class="meter"></span>
+                                </div>
                             </div>
-                        </div>
-                    </span>
-                    <span class="input-box">
-                        <p for="">Be Seller</p>
-                        <input type="checkbox" name="user_seller" id="user_seller">
-                    </span>
-                    <span class="input-box">
-                        <button type="submit">Sign Up</button>
-                    </span>
-                </fieldset>
-            </form>
+                        </span>
+                        <span class="input-box">
+                            <button type="submit">Sign Up</button>
+                        </span>
+                    </fieldset>
+                </form>
+            </div>
+            <div class="login-container">
+                <form action="/users/register_seller" method="post" class="form-register">
+                    <fieldset>
+                        <legend>Register For Seller</legend>
+                        <span class="input-box">
+                            <p for="">Username</p>
+                            <input type="text" name="seller_username" class="username" spellcheck="true" required>
+                        </span>
+                        <span class="input-box">
+                            <p for="">First Name</p>
+                            <input type="text" name="seller_fname" class="fname" required>
+                        </span>
+                        <span class="input-box">
+                            <p for="">Last Name</p>
+                            <input type="text" name="seller_lname" class="lname" required>
+                        </span>
+                        <span class="input-box">
+                            <p for="">Email</p>
+                            <input type="text" name="seller_email" class="email" required>
+                        </span>
+                        <strong class="email-validator-label"></strong>
+                        <span class="input-box">
+                            <p for="">Password</p>
+                            <input type="password" name="seller_password" class="password" required>
+                            <div class="password-strength">
+                                <strong class="password-strength-lebel"></strong>
+                                <div class="password-strength-meter">
+                                    <span class="meter"></span>
+                                    <span class="meter"></span>
+                                    <span class="meter"></span>
+                                    <span class="meter"></span>
+                                    <span class="meter"></span>
+                                </div>
+                            </div>
+                        </span>
+                        <span class="input-box">
+                            <button type="submit">Sign Up</button>
+                        </span>
+                    </fieldset>
+                </form>
+            </div>
         </div>
+        <a href="/home/" class="return-href">Return to Home Page</a>
     </div>
     <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
-    <a href="/home/" class="return-href">Return to Home Page</a>
     <script src="../js/formValidator.js"></script>
 </body>
 </html>

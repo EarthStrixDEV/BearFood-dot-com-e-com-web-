@@ -9,32 +9,46 @@
 
 .header-page-text {
     text-align: center;
+    font-size: 3em;
     padding: 2rem;
+    color: #fff;
+    text-shadow: 0 0 2px #333;
+}
+
+#body-login {
+    background: url("https://images.unsplash.com/photo-1552566626-52f8b828add9?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1470&q=80");
+    background-attachment: fixed;
+    backdrop-filter: blur(5%);
 }
 
 .container {
     display: flex;
     flex-direction: row;
     justify-content: space-evenly;
-    margin: 3rem auto;
+    margin: 0 auto;
 }
 
 .container .login-container {
-    width: 700px;
+    width: 600px;
     padding: 1rem;
 }
 
 .login-container fieldset {
+    background-color: #fff;    
     display: flex;
     flex-direction: column;
     align-items: center;
-    padding: 2rem;
+    padding: 2em;
     border-radius: 20px;
     border: 1px solid #33333336;
     box-shadow: 0 2px 0 #333333a3;
 }
 
 .login-container fieldset legend {
+    background-color: #fff;
+    border-top-left-radius: 15px;
+    border-top-right-radius: 15px;
+    padding: 0.7em 0.7em 0 0.7em;
     font-size: 30px;
 }
 
@@ -50,11 +64,19 @@
 
 .input-box input ,textarea {
     padding: 0.4rem;
-    width: 500px;
+    width: 450px;
     font-size: 1.3rem;
+    border: none;
     border-radius: 10px;
-    border: 1px solid #33333347;
+    background: #25252519;
     resize: none;
+}
+
+.input-box input[type="text"]:focus ,.input-box input[type="password"]:focus  {
+    background-color: #28282821;
+    outline: none;
+    caret-color: #3333338e;
+    box-shadow: 0 0 8px #3333333a;
 }
 
 .input-box .preview-image {
@@ -75,7 +97,9 @@
     cursor: pointer;
     font-size: 20px;
     border:none;
-    background-color: #fff;
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
+    background-color: #33333359;
     transition: all 0.05s ease-in;
 }
 
@@ -113,14 +137,15 @@
 }
 
 .return-href {
+    position: absolute;
+    left: 0;
+    top: 5%;
     cursor: pointer;
     padding: 1rem;
-    width: 20%;
-    height: 80%;
     transition: all 0.07s ease-in;
     text-decoration: none;
+    background-color: #ececec;
     color: #333;
-    margin: 46rem;
 }
 
 .return-href:hover {

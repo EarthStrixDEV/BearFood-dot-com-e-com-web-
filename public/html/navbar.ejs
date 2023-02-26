@@ -1,0 +1,39 @@
+<nav>
+    <h2>Khai Kong Dot Com.</h2>
+    <ul>
+        <% if (customer || seller) { %>
+            <a href="/home/" id="home">Home</a>
+            <a href="/home/popular">Popular</a>
+            <a href="/home/promotion">Promotion</a>
+            <a href="">About</a>
+        <% } %>
+    </ul>
+    <div class="icon-container">
+        <span>
+            <i class="fa fa-search"></i>
+        </span>
+        <span>
+            <a href="/home/cart" style="color:rgba(31, 31, 31, 0.714);"><i class="fa fa-shopping-cart" aria-hidden="true"></i></a>
+        </span>
+        <span>
+            <i class="fa fa-heart" aria-hidden="true"></i>
+        </span>
+        <% if (seller) { %>
+            <span>
+                <a href="/product/" style="color:rgba(31, 31, 31, 0.714);"><i class="fa fa-cart-plus" aria-hidden="true"></i></a>
+            </span>
+        <% } else { %>
+            <div></div>
+        <% } %>
+        <span>
+            <a href="/home/userProfile" style="color:rgba(31, 31, 31, 0.714);"><i class="fa fa-address-book" aria-hidden="true"></i></a>
+        </span>
+        <% if (customer || seller) { %>
+        <span>
+            <a href="/home/logout" style="color:rgba(31, 31, 31, 0.714);" onclick="return confirm('Are you sure to Logout??');"><i class="fa fa-long-arrow-right" aria-hidden="true"></i></a>
+        </span>
+        <% } else { %>
+        <div></div>
+        <% } %>
+    </div>
+</nav>
