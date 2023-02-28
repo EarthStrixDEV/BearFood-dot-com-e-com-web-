@@ -1,4 +1,4 @@
-# my-e-commerce-template-design
+# kai-kong-dot-com | E-com web
 E-Commerce Full Stack Web app
 > Web Stack technology
 - HTML
