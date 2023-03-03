@@ -8,8 +8,8 @@
     <title>Cart</title>
 </head>
 <body>
-    <h1 class="header-name">Cart</h1>
     <div class="container">
+        <h1 class="header-name">Cart</h1>
         <div class="list-item">
             <table>
                 <thead>
@@ -18,45 +18,35 @@
                         <th>Product Name</th>
                         <th>Product Description</th>
                         <th>Product Price</th>
-                        <th>Product Count</th>
+                        <th>Add Count</th>
+                        <th>Delete</th>
                     </tr>
                 </thead>
                 <tbody>
-                    <tr>
-                        <td>1</td>
-                        <td>Hamburger</td>
-                        <td>Hamburger From mcdonald ,with double cheese meat mixing vegetable</td>
-                        <td>1.99S</td>
-                        <td>2</td>
-                    </tr>
-                    <tr>
-                        <td>1</td>
-                        <td>Hamburger</td>
-                        <td>Hamburger From mcdonald ,with double cheese meat mixing vegetable</td>
-                        <td>1.99S</td>
-                        <td>2</td>
-                    </tr>
-                    <tr>
-                        <td>1</td>
-                        <td>Hamburger</td>
-                        <td>Hamburger From mcdonald ,with double cheese meat mixing vegetable</td>
-                        <td>1.99S</td>
-                        <td>2</td>
-                    </tr>
-                    <tr>
-                        <td>1</td>
-                        <td>Hamburger</td>
-                        <td>Hamburger From mcdonald ,with double cheese meat mixing vegetable</td>
-                        <td>1.99S</td>
-                        <td>2</td>
-                    </tr>
-                    <tr>
-                        <td>1</td>
-                        <td>Hamburger</td>
-                        <td>Hamburger From mcdonald ,with double cheese meat mixing vegetable</td>
-                        <td>1.99S</td>
-                        <td>2</td>
-                    </tr>
+                    <% if (data_cart) { %>
+                        <% Object.values(data_cart).map((data) => { %>
+                        <tr>
+                            <td class="prod_id"><%= data.prod_id %></td>
+                            <td class="prod_name"><%= data.cart_prod_name %></td>
+                            <td class="prod_description"><%= data.cart_prod_description %></td>
+                            <td class="prod_price"><%= data.cart_prod_price %>$</td>
+                            <td>
+                                <div class="add-count-item">
+                                    <div class="add-count-btn add-count-decrease">
+                                        <p>-</p>
+                                    </div>
+                                    <div class="add-count-btn add-count-number">
+                                        <p>0</p>
+                                    </div>
+                                    <div class="add-count-btn add-count-increase">
+                                        <p>+</p>
+                                    </div>
+                                </div>
+                            </td>
+                            <td><a href="/cart/delete/<%= data.cart_id %>" class="delete_cart">Delete</a></td>
+                        </tr>
+                        <% }) %>
+                    <% } %>
                 </tbody>
             </table>
         </div>
@@ -88,11 +78,18 @@
                 </div>
             </div>
             <div class="btn-operation-cart">
-                <button id="checkout">Checkout</button>
-                <button id="Update_Quantity">Update Quantity</button>
-                <button id="Continue_shopping">Continue Shopping</button>
+                <form action="/cart/delete_cart" method="post">
+                    <button id="checkout" style="width: 100%; text-align:center;">Checkout</button>
+                    <% Object.values(customer_id).map((data) => { %>
+                    <input type="hidden" name="customer_id" value="<%= data.customer_id %>">
+                    <% }) %>
+                    <button id="Update_Quantity" type="submit" style="width: 100%; text-align:center;">Clear Cart</button>
+                    </form>
+                    <a id="Continue_shopping" href="/home/">Continue Shopping</a>
+                </form>
             </div>
         </div>
     </div>
+    <script src="../js/cart.js"></script>
 </body>
 </html>

@@ -1,0 +1,11 @@
+INSERT INTO products (prod_name ,prod_description ,prod_price) 
+VALUES ('Sesame chicken','This fried chicken dish found at Chinese restaurants actually originated in the United States. It’s coated in a sweet-and-salty sauce comprised of honey',8.99),
+('Nachos','when chef Ignacio Anaya García threw together tortilla chips, cheese, and jalapeño peppers to satisfy hungry customers in a pinch',4.50),
+('Seaweed salad','This classic mixture coated in soy sauce, mirin, sesame, and yuzu juice is a go-to appetizer in Japanese cuisine.',2.39),
+('Pizza margherita','The simple yet iconic pie made of basil, mozzarella, and tomato is a staple in many Italian restaurants here in the United States, but legend has it that the style originated in Naples',5.50),
+('Hummus','The global hummus market is currently at about 2.95 billion dollars but is expected to grow to 6.6 billion by 2028. So while hummus is at a modest number 45 this year, we expect big things from the Middle Eastern dip.',7.99),
+('Cheese quesadilla','Original quesadilla recipes would have used masa tortillas filled with Oaxaca cheese. ',10.99),
+('Chicken tenders','Americans consume eight billion (yes, billion) chickens each year, so it’s no surprise that chicken pops up a couple of times on this list. Fried chicken was invented by the Scottish,',2.80),
+('Wonton soup','It should come as no surprise that this Chinese cuisine standard is popular with those ordering food delivery.',8.89),
+('Salmon avocado roll','these sushi rolls certainly fit the bill. A six- to eight-piece salmon-and-avocado roll provides protein and healthy fat and clocks in at just over 300 calories.',12.10),
+('Garlic knots','Food historians have narrowed the location to New York, either Brooklyn or Queens, although exactly where in those boroughs is a hotly debated topic',6.75)

@@ -1,145 +1,142 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Khai Kong Dot Com</title>
-    <link rel="stylesheet" href="../css/style.css">
-    <link rel="stylesheet" href="../css/navbar.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="../css/style.css" />
+    <link rel="stylesheet" href="../css/navbar.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"
+    />
     <!-- font awesome -->
-</head>
-<body>
+  </head>
+  <body>
     <%- include('navbar') %>
     <header>
-        <% if (customer || seller) { %>
-        <div class="welcome-block">
-            <% if (seller) { %>
-                <h1>Welcome ,<%= seller %></h1>
-                <p style="line-height: 40px; font-size:1.2em;">Let's to explore heaven of food'</p>
-            <% } else if (customer) { %>
-                <h1>Welcome ,<%= customer %></h1>
-                <p style="line-height: 40px; font-size:1.2em;">Let's to explore heaven of food'</p>
-            <% } else { %>
-                <div></div>
-            <% } %>
+      <% if (customer || seller) { %>
+      <div class="welcome-block">
+        <% if (seller) { %>
+        <h1>Welcome ,<%= seller %></h1>
+        <p style="line-height: 40px; font-size: 1.2em">
+          Let's to explore heaven of food'
+        </p>
+        <% } else if (customer) { %>
+        <h1>Welcome ,<%= customer %></h1>
+        <p style="line-height: 40px; font-size: 1.2em">
+          Let's to explore heaven of food'
+        </p>
+        <% } else { %>
+        <div></div>
+        <% } %>
+      </div>
+      <div class="large-header">
+        <div class="left-text-header">
+          <h4>SHOP ONLINE EXCLUSIVES</h4>
+          <h2>BODY HANDING</h2>
+          <button class="container-more-info">More Info</button>
         </div>
-        <div class="large-header">
-            <div class="left-text-header">
-                <h4>SHOP ONLINE EXCLUSIVES</h4>
-                <h2>BODY HANDING</h2>
-                <button class="container-more-info">More Info</button>
-            </div>
-            <div class="right-image-header">
-                <img src="https://cdn.pixabay.com/photo/2017/01/11/11/33/cake-1971552_960_720.jpg" alt="item" id="item">
-                <div class="text-image">
-                    <h3>Toffee Cake</h3>
-                    <p>$3.29</p>
-                </div>
-            </div>
+        <div class="right-image-header">
+          <img
+            src="https://cdn.pixabay.com/photo/2017/01/11/11/33/cake-1971552_960_720.jpg"
+            alt="item"
+            id="item"
+          />
+          <div class="text-image">
+            <h3>Toffee Cake</h3>
+            <p>$3.29</p>
+          </div>
         </div>
-        <div class="nav-category">
-            <button class="btn-category">Best Product</button>
-            <button class="btn-category">Popular</button>
-            <button class="btn-category">Best seller</button>
-        </div>
+      </div>
+      <div class="nav-category">
+        <button class="btn-category">Best Product</button>
+        <button class="btn-category">Popular</button>
+        <button class="btn-category">Best seller</button>
+      </div>
     </header>
     <section>
+      <% Object.values(product_data).map((data) => { %>
+      <form action="/cart/adding-cart" method="post">
         <div class="item-section">
-            <img src="https://cdn.pixabay.com/photo/2016/03/23/15/00/ice-cream-1274894_960_720.jpg" alt="">
-            <p>Ice Creme</p>
-            <strong>$1.99</strong>
-            <button class="add-to-cart">Add to Cart</button>
+          <input type="hidden" name="customer_id" value="<%= customer_id %>" />
+          <input
+            type="hidden"
+            name="prod_id"
+            value="<%= data.prod_id %>"
+            class="id_product"
+          />
+          <input type="hidden" name="cart_prod_name" class="cart_prod_name" value="<%= data.prod_name %>">
+          <input
+            type="hidden"
+            name="prod_description"
+            value="<%= data.prod_description %>"
+            class="description_product"
+          />
+          <input type="hidden" name="cart_prod_date" value="" class="cart_prod_date">
+          <input type="hidden" name="prod_price" class="cart_prod_price" value="<%= data.prod_price %>">
+          <img
+            src="<%= data.prod_image %>"
+            alt=""
+          />
+          <p class="name-product"><%= data.prod_name %></p>
+          <strong class="price_product"
+            >$<%= data.prod_price %></strong
+          >
+          <button class="add-to-cart" type="submit">Add to Cart</button>
         </div>
-        <div class="item-section">
-            <img src="https://cdn.pixabay.com/photo/2017/07/28/14/29/macarons-2548827_960_720.jpg" alt="">
-            <p>Magarong</p>
-            <strong>$2.89</strong>
-            <button class="add-to-cart">Add to Cart</button>
-        </div>
-        <div class="item-section">
-            <img src="https://cdn.pixabay.com/photo/2015/07/12/14/26/coffee-842020_960_720.jpg" alt="">
-            <p>Bread & Coffee</p>
-            <strong>$3.99</strong>
-            <button class="add-to-cart">Add to Cart</button>
-        </div>
-        <div class="item-section">
-            <img src="https://cdn.pixabay.com/photo/2016/03/27/21/59/bread-1284438_960_720.jpg" alt="">
-            <p>Bread Kau Song</p>
-            <strong>$0.99</strong>
-            <button class="add-to-cart">Add to Cart</button>
-        </div>
-        <div class="item-section">
-            <img src="https://cdn.pixabay.com/photo/2017/05/23/22/33/birthday-2338813_960_720.jpg" alt="">
-            <p>Birthday Cake</p>
-            <strong>$3.50</strong>
-            <button class="add-to-cart">Add to Cart</button>
-        </div>
-        <div class="item-section">
-            <img src="https://cdn.pixabay.com/photo/2016/12/15/03/27/cocoa-1908020_960_720.jpg" alt="">
-            <p>Cocoa</p>
-            <strong>$1.39</strong>
-            <button class="add-to-cart">Add to Cart</button>
-        </div>
-        <div class="item-section">
-            <img src="https://cdn.pixabay.com/photo/2016/10/25/12/56/almonds-1768792_960_720.jpg" alt="">
-            <p>Almond</p>
-            <strong>$1.29</strong>
-            <button class="add-to-cart">Add to Cart</button>
-        </div>
-        <div class="item-section">
-            <img src="https://cdn.pixabay.com/photo/2016/01/11/07/18/cupcakes-1133146_960_720.jpg" alt="">
-            <p>Cup Cake</p>
-            <strong>$2.99</strong>
-            <button class="add-to-cart">Add to Cart</button>
-        </div>
+      </form>
+      <% }) %>
     </section>
     <% } else { %>
-        <div class="ifNotLogin">
-            <h1>Welcome To Khai Kong Dot Com</h1>
-            <p>Please Login before Visit Web Page</p>
-            <small>If you aren't regis to be member ,you can go to register to regis to be member</small>
-            <a href="/users/login_register" class="logout">Login</a>
-        </div>
+    <div class="ifNotLogin">
+      <h1>Welcome To Khai Kong Dot Com</h1>
+      <p>Please Login before Visit Web Page</p>
+      <small
+        >If you aren't regis to be member ,you can go to register to regis to be
+        member</small
+      >
+      <a href="/users/login_register" class="logout">Login</a>
+    </div>
     <% } %>
     <footer>
-        <div class="payment">
-            <h4>Khai Kong Dot Com</h4>
-            <strong>E payment</strong>
-            <div class="payment-icon">
-                <i class="fa fa-cc-visa" aria-hidden="true"></i>
-                <i class="fa fa-cc-mastercard" aria-hidden="true"></i>
-                <i class="fa fa-cc-paypal" aria-hidden="true"></i>
-                <i class="fa fa-cc-amex" aria-hidden="true"></i>
-            </div>
+      <div class="payment">
+        <h4>Khai Kong Dot Com</h4>
+        <strong>E payment</strong>
+        <div class="payment-icon">
+          <i class="fa fa-cc-visa" aria-hidden="true"></i>
+          <i class="fa fa-cc-mastercard" aria-hidden="true"></i>
+          <i class="fa fa-cc-paypal" aria-hidden="true"></i>
+          <i class="fa fa-cc-amex" aria-hidden="true"></i>
         </div>
-        <div class="menu">
-            <ul>
-                <li>Popular</li>
-                <li>Promotion</li>
-                <li>Category</li>
-                <li>About</li>
-            </ul>
-            <ul>
-                <li>FAQ</li>
-                <li>Privacy Policy</li>
-                <li>Terms & Conditions</li>
-                <li>Return Policy</li>
-            </ul>
+      </div>
+      <div class="menu">
+        <ul>
+          <li>Popular</li>
+          <li>Promotion</li>
+          <li>Category</li>
+          <li>About</li>
+        </ul>
+        <ul>
+          <li>FAQ</li>
+          <li>Privacy Policy</li>
+          <li>Terms & Conditions</li>
+          <li>Return Policy</li>
+        </ul>
+      </div>
+      <div class="contact">
+        <p>+6689-xxx-xxxx</p>
+        <p>khaikongdotcom@gmail.com</p>
+        <div class="social-media-icon">
+          <i class="fa fa-facebook" aria-hidden="true"></i>
+          <i class="fa fa-twitter" aria-hidden="true"></i>
+          <i class="fa fa-instagram" aria-hidden="true"></i>
+          <i class="fa fa-youtube" aria-hidden="true"></i>
         </div>
-        <div class="contact">
-            <p>+6689-xxx-xxxx</p>
-            <p>khaikongdotcom@gmail.com</p>
-            <div class="social-media-icon">
-                <i class="fa fa-facebook" aria-hidden="true"></i>
-                <i class="fa fa-twitter" aria-hidden="true"></i>
-                <i class="fa fa-instagram" aria-hidden="true"></i>
-                <i class="fa fa-youtube" aria-hidden="true"></i>
-            </div>
-        </div>
+      </div>
     </footer>
     <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
-    <script src="../js/script.js"></script>
-</body>
+    <script src="../js/home.js"></script>
+  </body>
 </html>

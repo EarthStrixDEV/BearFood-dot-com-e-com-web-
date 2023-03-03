@@ -4,10 +4,13 @@ const app = express()
 const express_session = require('express-session')
 const port = 1200
 
+/* import controller */
 const home = require('./controller/home')
 const users = require('./controller/users')
 const product = require('./controller/product')
+const cart = require('./controller/cart')
 
+/* set middleware */
 app.use(express.static(path.join(__dirname, 'public')))
 app.use(express.json())
 app.use(express.urlencoded({ extended: false }))
@@ -15,9 +18,8 @@ app.set('views', path.join(__dirname, './public/html'))
 app.set('view engine', 'ejs')
 app.use(
   express_session({
-    secret: "thisisitNJDG",
+    secret: "secret",
     resave: false,
-    cookie: { path: "/", httpOnly: true, secure: false, maxAge: 3600000 },
     saveUninitialized: false,
   })
 );
@@ -26,5 +28,6 @@ app.use(
 app.use('/home', home)
 app.use('/users', users)
 app.use('/product', product)
+app.use('/cart', cart)
 
 app.listen(port,() => console.log(`server is running on port ${port}`))

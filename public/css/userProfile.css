@@ -7,12 +7,19 @@
     font-family: 'Fredoka One', cursive;
 }
 
+body {
+    background-image: url("https://www.xtrafondos.com/wallpapers/resized/escandalosos-somos-osos-7867.jpg?s=large");
+    background-attachment: fixed;
+    background-size: auto;
+}
+
 .container {
     max-width: 1024px;
     height: 150vh;
     margin: 2em auto;
     padding: 1em 2em 1em 2em;
     background-color: #33333310;
+    backdrop-filter: blur(7px);
 }
 
 .main-section {
