@@ -1,4 +1,4 @@
-# kai-kong-dot-com | E-com web
+# khai-kong-dot-com | E-com web
 E-Commerce Full Stack Web app
 > Web Stack technology
 - HTML
