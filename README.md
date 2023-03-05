@@ -8,3 +8,6 @@ E-Commerce Full Stack Web app
 - NodeJs
 - ExpressJs
 - MySQL
+> Software
+- Visual Studio Code
+- XAMPP
