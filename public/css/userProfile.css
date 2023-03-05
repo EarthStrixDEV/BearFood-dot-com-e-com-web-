@@ -15,7 +15,7 @@ body {
 
 .container {
     max-width: 1024px;
-    height: 150vh;
+    height: 100%;
     margin: 2em auto;
     padding: 1em 2em 1em 2em;
     background-color: #33333310;
@@ -42,9 +42,31 @@ body {
     text-align: center;
 }
 
-.header-page .user_image {
-    width: 400px;
-    height: 400px;
+.user_image {
+    width: 370px;
+    height: 370px;
+    padding: 0.8em;
+}
+
+.user_data .btn-profile {
+    text-decoration: none;
+    cursor: pointer;
+    padding: 0.8em;
+    margin: 0.7em 0 1em 0;
+    border: none;
+    border-radius: 10px;
+    background-color: #ffffff72;
+    transition: all 0.1s ease-out;
+    color: #333;
+}
+
+.user_data .btn-profile:hover{
+    outline: 1px dashed #333;
+    background-color: #e8c3c353;
+}
+.user_data .btn-profile:active {
+    background-color: #333;
+    color: #fff;
 }
 
 .header-page .user_image img {
@@ -164,10 +186,8 @@ body {
 }
 
 .btn-return-homepage-section {
-    position: absolute;
-    top: 149.75vh;
-    left: 77vh;
-    transform: translate(40%);
+    margin-top: 1em;
+    text-align: center;
 }
 
 .btn-return-homepage-section a {

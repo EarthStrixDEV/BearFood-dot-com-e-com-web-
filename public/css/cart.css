@@ -134,11 +134,16 @@ body {
     border-radius: 12px;
     cursor: pointer;
     transition: all 0.07s ease-in;
+    font-size: 1em;
+}
+
+.btn-operation-cart a {
+    background-color: buttonface;
 }
 
 .btn-operation-cart button:hover ,
 a:hover {
-    background-color: #33333312;
+    background-color: #3333331b;
 }
 
 .btn-operation-cart button:active ,

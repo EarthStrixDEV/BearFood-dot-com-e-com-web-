@@ -33,7 +33,7 @@
     align-self: center;
     overflow: hidden;
     padding: 2rem;
-    backdrop-filter: blur(7px);
+    backdrop-filter: blur(10px);
 }
 
 .promotion-img-box {

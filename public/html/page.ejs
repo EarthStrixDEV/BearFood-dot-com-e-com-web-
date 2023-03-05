@@ -7,10 +7,6 @@
     <title>Khai Kong Dot Com</title>
     <link rel="stylesheet" href="../css/style.css" />
     <link rel="stylesheet" href="../css/navbar.css" />
-    <link
-      rel="stylesheet"
-      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"
-    />
     <!-- font awesome -->
   </head>
   <body>
@@ -84,7 +80,9 @@
           <strong class="price_product"
             >$<%= data.prod_price %></strong
           >
-          <button class="add-to-cart" type="submit">Add to Cart</button>
+        <% if (customer) { %>
+            <button class="add-to-cart" type="submit">Add to Cart</button>
+        <% } %>
         </div>
       </form>
       <% }) %>
@@ -97,7 +95,7 @@
         >If you aren't regis to be member ,you can go to register to regis to be
         member</small
       >
-      <a href="/users/login_register" class="logout">Login</a>
+      <a href="/users/login_customer" class="logout">Login</a>
     </div>
     <% } %>
     <footer>
@@ -136,7 +134,7 @@
         </div>
       </div>
     </footer>
-    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+    <%- include('sweetalert_script') %>
     <script src="../js/home.js"></script>
   </body>
 </html>

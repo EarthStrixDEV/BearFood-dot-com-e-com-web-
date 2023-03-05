@@ -49,4 +49,16 @@ router.get('/delete/:id', (req, res) => {
         res.sendStatus(400).send(error)
     }
 })
+router.post("/check-out", (req, res) => {
+    const customer_id = req.body.customer_id;
+    let checkOut_query = `UPDATE cart SET cart_checkout_status = 1 WHERE cart_checkout_status IS NULL AND customer_id = ${ customer_id }`
+    try {
+        sqlConnector.query(checkOut_query, (err ,result) => {
+            if (err) throw err;
+            res.redirect('/home/cart')
+        })
+    } catch (error) {
+        res.sendStatus(400).send(error)
+    }
+});
 module.exports = router;

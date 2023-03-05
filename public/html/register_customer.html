@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../css/form.css">
+    <title>Login / Register</title>
+</head>
+<body>
+    <div class="container">
+        <div class="login-container">
+            <form action="/users/register_customer" method="post" class="form-register">
+                <h1 class="header-page-text">Register</h1>
+                <span class="input-box">
+                    <p for="">Username</p>
+                    <input type="text" name="customer_username" class="username" spellcheck="true" required>
+                </span>
+                <span class="input-box">
+                    <p for="">First Name</p>
+                    <input type="text" name="customer_fname" class="fname" required>
+                </span>
+                <span class="input-box">
+                    <p for="">Last Name</p>
+                    <input type="text" name="customer_lname" class="lname" required>
+                </span>
+                <span class="input-box">
+                    <p for="">Email</p>
+                    <input type="text" name="customer_email" class="email" required>
+                </span>
+                <strong class="email-validator-label"></strong>
+                <span class="input-box">
+                    <p for="">Password</p>
+                    <input type="password" name="customer_password" class="password" required>
+                    <div class="password-strength">
+                        <strong class="password-strength-lebel"></strong>
+                        <div class="password-strength-meter">
+                            <span class="meter"></span>
+                            <span class="meter"></span>
+                            <span class="meter"></span>
+                            <span class="meter"></span>
+                            <span class="meter"></span>
+                        </div>
+                    </div>
+                </span>
+                <span class="input-box">
+                    <button type="submit">Sign Up</button>
+                </span>
+                <p class="Sign-up">If you have an account already <a href="/users/login_customer">Sign In</a></p>
+            </form>
+        </div>
+    </div>
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+    <script src="../js/formValidator.js"></script>
+</body>
+</html>

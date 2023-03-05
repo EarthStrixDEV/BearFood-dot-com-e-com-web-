@@ -10,6 +10,7 @@
 </head>
 <body>
     <header>
+        <input type="hidden" name="" value="">
         <h1 class="header-name">Product Management System</h1>
         <div class="header-monitor">
             <div class="header-item-counter">
@@ -27,29 +28,35 @@
                     <div class="item-counter-numerics">
                         <h2>Total Cart</h2>
                     </div>
-                    <div class="item-counter-label">
-                        <p>0</p>
-                    </div>
+                    <% Object.values(total_cart).map((item) => { %>
+                        <div class="item-counter-label">
+                            <p><%= item.total_cart %></p>
+                        </div>
+                    <% }) %>
                 </div>
                 <div class="item-counter">
                     <div class="item-counter-numerics">
                         <h2>Total Store</h2>
                     </div>
-                    <div class="item-counter-label">
-                        <p>0</p>
-                    </div>
+                    <% Object.values(total_seller).map((item) => { %>
+                        <div class="item-counter-label">
+                            <p><%= item.total_seller %></p>
+                        </div>
+                    <% }) %>
                 </div>
                 <div class="item-counter">
                     <div class="item-counter-numerics">
                         <h2>Total Order</h2>
                     </div>
-                    <div class="item-counter-label">
-                        <p>0</p>
-                    </div>
+                    <% Object.values(total_order).map((item) => { %>
+                        <div class="item-counter-label">
+                            <p><%= item.total_order %></p>
+                        </div>
+                    <% }) %>
                 </div>
             </div>
             <div class="header-item-adder">
-                <a href="/product/add_products">Add Product</a>
+                <a href="/home/add_product">Add Product</a>
             </div>
             <div class="header-item-adder">
                 <a href="/home/">Return To Home</a>
@@ -64,15 +71,12 @@
                     <th>Name</th>
                     <th>Description</th>
                     <th>Price</th>
-                    <th>Store</th>
-                    <th>Date</th>
-                    <th>Order</th>
                     <th></th>
                     <th></th>
                 </tr>
             </thead>
             <tbody>
-                <!-- <% Object.values(data).forEach((item) => { %>
+                <% Object.values(data).forEach((item) => { %>
                     <tr>
                         <td><%= item.prod_id %></td>
                         <td><%= item.prod_name %></td>
@@ -84,7 +88,7 @@
                         <td><a href="/product/edit/product_id=<%= item.prod_id %>" class="btn btn-primary">Edit</a></td>
                         <td><a href="/product/delete/<%= item.prod_id %>" class="btn btn-danger" onclick="return confirm('Are you sure to delete this product?')">Delete</a></td>
                     </tr>
-                <% }) %> -->
+                <% }) %>
             </tbody>
         </table>
     </section>

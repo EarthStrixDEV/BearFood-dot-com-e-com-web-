@@ -8,7 +8,8 @@ const add_count_number = document.querySelectorAll(".add-count-number");
 const body = document.querySelector('body')
 const tbody = document.querySelector('tbody')
 const tr = tbody.querySelectorAll('tr')
-const checkout = document.getElementById("checkout");
+const checkout = document.querySelector("form[action='/cart/check-out']");
+const clear_cart = document.querySelector("form[action='/cart/delete_cart']");
 
 for (let i = 0; i < add_count_increase.length; i++) {
     add_count_increase[i].addEventListener('click', (event) => {
@@ -25,15 +26,38 @@ for (let i = 0; i < add_count_increase.length; i++) {
     })
 }
 
-checkout.addEventListener('click', (event) => {
-    const form_cart = document.createElement('form')
-    form_cart.setAttribute('action', '')
-    form_cart.setAttribute('method', 'post')
-    for (let i = 0; i < tr.length; i++) {
-        const product_id_logs = document.createElement("input")
-        product_id_logs.setAttribute('type', 'hidden')
-        product_id_logs.setAttribute('value','')
-        form_cart.appendChild(product_id_logs)
-    }
-    body.appendChild(form_cart)
+checkout.addEventListener('submit', (event) => {
+    event.preventDefault()
+    Swal.fire({
+        title: "Do you want to checked out the cart?",
+        showCancelButton: true,
+        confirmButtonText: "Done",
+    }).then((result) => {
+        if (result.isConfirmed) {
+            Swal.fire("Checked-Out!", "", "success");
+            setTimeout(() => {
+                checkout.submit()
+            },2000)
+        }
+    });
+})
+
+clear_cart.addEventListener('submit', (event) => {
+    event.preventDefault()
+    Swal.fire({
+        title: "Are you sure?",
+        text: "All items have removed from list!",
+        icon: "warning",
+        showCancelButton: true,
+        confirmButtonColor: "#3085d6",
+        cancelButtonColor: "#d33",
+        confirmButtonText: "Yes, delete it!",
+    }).then((result) => {
+        if (result.isConfirmed) {
+            Swal.fire("Deleted!", "Your file has been deleted.", "success");
+            setTimeout(() => {
+                clear_cart.submit();
+            }, 2000);
+        }
+    });
 })

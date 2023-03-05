@@ -5,11 +5,12 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="../css/cart.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <title>Cart</title>
 </head>
 <body>
     <div class="container">
-        <h1 class="header-name">Cart</h1>
+        <h1 class="header-name">My Cart <i class="fa fa-shopping-cart" style="font-size:36px"></i></h1>
         <div class="list-item">
             <table>
                 <thead>
@@ -19,7 +20,7 @@
                         <th>Product Description</th>
                         <th>Product Price</th>
                         <th>Add Count</th>
-                        <th>Delete</th>
+                        <th>Remove</th>
                     </tr>
                 </thead>
                 <tbody>
@@ -43,7 +44,7 @@
                                     </div>
                                 </div>
                             </td>
-                            <td><a href="/cart/delete/<%= data.cart_id %>" class="delete_cart">Delete</a></td>
+                            <td><a href="/cart/delete/<%= data.cart_id %>" class="delete_cart">Remove</a></td>
                         </tr>
                         <% }) %>
                     <% } %>
@@ -51,10 +52,12 @@
             </table>
         </div>
         <div class="counter-price-item">
+            
             <div class="count-price-box">
                 <p class="count-label">Discount</p>
                 <p class="total-price">1.99$</p>
             </div>
+            
             <div class="count-price-box">
                 <p class="count-label">Delivery</p>
                 <p class="total-price">1.99$</p>
@@ -78,18 +81,22 @@
                 </div>
             </div>
             <div class="btn-operation-cart">
-                <form action="/cart/delete_cart" method="post">
-                    <button id="checkout" style="width: 100%; text-align:center;">Checkout</button>
-                    <% Object.values(customer_id).map((data) => { %>
+                <% Object.values(customer_id).map((data) => { %>
+                <form action="/cart/check-out" method="post">
                     <input type="hidden" name="customer_id" value="<%= data.customer_id %>">
-                    <% }) %>
-                    <button id="Update_Quantity" type="submit" style="width: 100%; text-align:center;">Clear Cart</button>
-                    </form>
-                    <a id="Continue_shopping" href="/home/">Continue Shopping</a>
+                    <button id="checkout" style="width: 100%; text-align:center;" type="submit">Checkout <i class="fa fa-check-circle" aria-hidden="true"></i></button>
                 </form>
+                <form action="/cart/delete_cart" method="post">
+                    <input type="hidden" name="customer_id" value="<%= data.customer_id %>">
+                    <button id="Update_Quantity" type="submit" style="width: 100%; text-align:center;">Clear Cart <i class="fa fa-trash" aria-hidden="true"></i></button>
+                </form>
+                <a id="Continue_shopping" href="/home/">Continue Shopping <i class="fa fa-home" aria-hidden="true"></i></a>
+                <% }) %>
             </div>
         </div>
     </div>
+    <script src="https://kit.fontawesome.com/yourcode.js" crossorigin="anonymous"></script>
+    <%- include('sweetalert_script') %>
     <script src="../js/cart.js"></script>
 </body>
 </html>

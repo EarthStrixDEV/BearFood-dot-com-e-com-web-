@@ -36,6 +36,7 @@ text_image.addEventListener('mouseout', (e) => {
 
 for (let i = 0; i < add_item_form.length; i++) {
     add_item_form[i].addEventListener('submit', (event) => {
+        event.preventDefault()
         Swal.fire({
             icon: "success",
             title: "Add item",
@@ -43,7 +44,7 @@ for (let i = 0; i < add_item_form.length; i++) {
         })
         setTimeout(() => {
             add_item_form[i].submit();
-        }, 3000);
+        }, 2000);
     })
 }
 

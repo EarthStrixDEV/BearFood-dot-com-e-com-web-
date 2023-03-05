@@ -14,9 +14,19 @@
             font-family: 'Fredoka One', cursive;
         }
 
+        body {
+            background-image: url("https://www.xtrafondos.com/wallpapers/resized/escandalosos-somos-osos-7867.jpg?s=large");
+            background-attachment: fixed;
+            background-size: auto;
+        }
+
         .container {
-            max-width: 960px;
+            max-width: 1024px;
+            padding: 1em 3em 0 3em;
             margin: 0 auto;
+            backdrop-filter: blur(10px);
+            overflow: hidden;
+            border-radius: 20px;
         }
 
         .head-text {
@@ -34,7 +44,7 @@
 
         .form-control input {
             width: 600px;
-            height: 70px;
+            height: 50px;
             font-size: 1.4rem;
             border-radius: 10px;
             border: 1px solid #33333349;
@@ -46,14 +56,6 @@
             font-size: 1.2rem;
         }
 
-        .form-control textarea {
-            resize: none;
-            font-size: 1.2rem;
-            padding:1em;
-            border: 1px solid #33333349;
-            border-radius: 15px;
-        }
-
         .form-control button {
             width: 120px;
             height: 60px;
@@ -63,6 +65,22 @@
             background-color: #fff;
             font-size: 1rem;
             transition: all 0.05s ease-out;
+        }
+
+        .form-control .preview-image {
+            width: 400px;
+            height: 400px;
+            border: none;
+            border-radius: 15px;
+            padding: 1em;
+            margin: 2em 0 1em 0;
+            background-color: buttonface;
+        }
+
+        .form-control .preview-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
         }
 
         .form-control button:hover {
@@ -109,30 +127,62 @@
                 </div>
                 <div class="form-control">
                     <p>Description</p>
-                    <textarea name="edit_fname" id="edit_prod_fname" value="<%= data.prod_description %>" cols="65" rows="15"></textarea>
+                    <input name="edit_fname" id="edit_prod_fname" value="<%= data.prod_description %>">
                 </div>
                 <div class="form-control">
                     <p>Price</p>
                     <input type="text" name="edit_lname" id="edit_prod_lname" value="<%= data.prod_price %>">
                 </div>
                 <div class="form-control">
-                    <p>Seller</p>
-                    <input type="text" name="edit_email" id="edit_prod_email" value="<%= data.prod_store %>">
-                </div>
-                <div class="form-control">
-                    <p>Image</p>
-                    <input type="file" name="edit_password" id="edit_prod_password" value="<%= data.prod_image %>">
+                    <p>Image Url</p>
+                    <input type="text" name="edit_image" class="edit_image" value="<%= data.prod_image %>">
+                    <div class="preview-image">
+                        <img src="<%= data.prod_image %>" alt="preview" class="preview">
+                    </div>
+                    <strong>Preview Image</strong>
                 </div>
                 <% }) %>
                 <div class="form-control">
                     <button type="submit">Done</button>
                 </div>
                 <div class="form-control">
-                    <a href="/product/" class="return-admin">Return To Product Manager</a>
+                    <a href="/home/products" class="return-admin">Return To Product Manager</a>
                 </div>
             </form>
         </div>
     </div>
     <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+     <script>
+        const update_data_form = document.querySelector('form');
+        let image_url = document.querySelector(".edit_image");
+        let preview_image = document.querySelector('.preview')
+
+        update_data_form.addEventListener('submit', (event) => {
+            event.preventDefault()
+            Swal.fire({
+                title: "Do you want to save the changes?",
+                showDenyButton: true,
+                showCancelButton: true,
+                confirmButtonText: "Save",
+                denyButtonText: `Don't save`,
+            }).then((result) => {
+                if (result.isConfirmed) {
+                    Swal.fire("Saved!", "", "success");
+                    setTimeout(() => {
+                        update_data_form.submit()
+                    },2000)
+                } else if (result.isDenied) {
+                    Swal.fire("Changes are not saved", "", "info");
+                    return false;
+                }
+            });
+            console.log(event.target);
+        })
+
+        image_url.addEventListener('input', (event) => {
+            event.preventDefault()
+            preview_image.src = event.target.value;
+        })
+    </script>
 </body>
 </html>

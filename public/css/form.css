@@ -9,47 +9,37 @@
 
 .header-page-text {
     text-align: center;
-    font-size: 3em;
+    font-size: 2.5em;
     padding: 2rem;
-    color: #fff;
-    text-shadow: 0 0 2px #333;
-}
-
-#body-login {
-    background: url("https://images.unsplash.com/photo-1552566626-52f8b828add9?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1470&q=80");
-    background-attachment: fixed;
-    backdrop-filter: blur(5%);
+    color: #333;
 }
 
 .container {
     display: flex;
     flex-direction: row;
-    justify-content: space-evenly;
-    margin: 0 auto;
+    justify-content: flex-end;
+    background-color: buttonface;
+    background: url("https://www.xtrafondos.com/wallpapers/resized/escandalosos-somos-osos-7867.jpg?s=large");
+    background-attachment: fixed;
+    backdrop-filter: blur(5%);
+    height: 100%;
 }
 
 .container .login-container {
-    width: 600px;
-    padding: 1rem;
-}
-
-.login-container fieldset {
-    background-color: #fff;    
     display: flex;
     flex-direction: column;
     align-items: center;
-    padding: 2em;
-    border-radius: 20px;
-    border: 1px solid #33333336;
-    box-shadow: 0 2px 0 #333333a3;
+    width: 960px;
+    height: 100vh;
+    background-color: buttonface;
+    box-shadow: -2px 0 5px #3333333c;
+    align-content: center;
 }
 
-.login-container fieldset legend {
-    background-color: #fff;
-    border-top-left-radius: 15px;
-    border-top-right-radius: 15px;
-    padding: 0.7em 0.7em 0 0.7em;
-    font-size: 30px;
+.container .login-container form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
 }
 
 .input-box {
@@ -79,33 +69,19 @@
     box-shadow: 0 0 8px #3333333a;
 }
 
-.input-box .preview-image {
-    margin: 1rem 0 1rem 0;
-    width: 90%;
-    height: auto;
-}
-
-.preview-image img {
-    display: none;
-    width: 100%;
-    height: 100%;
-}
-
 .input-box button {
-    width: 150px;
+    width: 100%;
     height: 50px;
     cursor: pointer;
     font-size: 20px;
     border:none;
-    border-top-left-radius: 10px;
-    border-top-right-radius: 10px;
-    background-color: #33333359;
+    border-radius: 10px;
+    background-color: #3333333a;
     transition: all 0.05s ease-in;
 }
 
 .input-box button:hover {
-    background-color: #e7e7e7;
-    box-shadow: 0 4px 0 #333;
+    background-color: #cfcfcf5a;
 }
 
 .input-box button:active {
@@ -126,7 +102,7 @@
     display: flex;
     flex-direction: row;
     justify-content:space-between;
-    width: 500px;
+    width: 450px;
     height: 15px;
     margin: 10px 0 0 0;
 }
@@ -136,25 +112,9 @@
     background-color: #33333324;
 }
 
-.return-href {
-    position: absolute;
-    left: 0;
-    top: 5%;
-    cursor: pointer;
-    padding: 1rem;
-    transition: all 0.07s ease-in;
-    text-decoration: none;
-    background-color: #ececec;
-    color: #333;
-}
-
-.return-href:hover {
-    box-shadow: 0 3px 0 #333;
-    background-color: #ececec;
-}
-
-.return-href:active {
-    box-shadow: 0 3px 0 #333;
-    background-color: #333;
-    color: #fff;
+.Sign-up {
+    width: 100%;
+    font-size: 1em;
+    text-align: center;
+    margin-top: 1em;
 }

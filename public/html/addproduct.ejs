@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../css/addProduct.css">
+    <title>Add Product</title>
+</head>
+<body>
+    <div class="container">
+        <h1 class="head-text">Add Products</h1>
+        <hr>
+        <div class="form-container">
+            <form action="/product/add_products" method="post">
+                <input type="hidden" class="date-add-item" name="prod_date">
+                <input type="hidden" name="seller_id" value="<%= seller_id %>"/>
+                <div class="form-control">
+                    <p for="">Name</p>
+                    <input type="text" name="prod_name" id="prod_name" required>
+                </div>
+                <div class="form-control">
+                    <p for="">Description</p>
+                    <input type="text" name="prod_description" id="prod_description" required>
+                </div>
+                <div class="form-control">
+                    <p for="">Price</p>
+                    <input type="text" name="prod_price" id="prod_price" required>
+                </div>
+                <div class="form-control">
+                    <p for="">Image Url</p>
+                    <input type="text" name="prod_image" id="prod_image">
+                    <div class="preview-image">
+                        <img src="" alt="preview">
+                    </div>
+                    <strong>Preview Image</strong>
+                </div>
+                <div class="form-control">
+                    <button type="submit">Submit</button>
+                </div>
+                <div class="form-control">
+                    <a href="/home/products" class="return-admin">Return to Home Page</a>
+                </div>
+            </form>
+        </div>
+    </div>
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+    <script src="../js/addproduct.js"></script>
+</body>
+</html>

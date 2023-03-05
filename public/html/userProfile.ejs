@@ -5,6 +5,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="../css/userProfile.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <title>Home - UserProfile</title>
 </head>
 <body>
@@ -12,61 +13,98 @@
         <div class="main-section">
             <div class="header-page">
                 <div class="header-page-text">
-                    <h1>User Profile</h1>   
+                    <h1>User Profile <i class="fa fa-address-book" aria-hidden="true"></i></h1>
+                    <% if (customer) { %>
                     <% Object.values(user_data).map((data) => { %>
                     <h3><%= data.customer_username %></h3>
                     <% }) %>
+                    <% } if (seller) { %>
+                    <% Object.values(user_data).map((data) => { %>
+                    <h3><%= data.seller_username %></h3>
+                    <% }) %>
+                    <% } %>
                 </div>
                 <div class="user_image">
-                    <img src="https://images.unsplash.com/flagged/photo-1570612861542-284f4c12e75f?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1470&q=80" alt="">
+                    <% if (customer) { %>
+                    <% Object.values(user_data).map((data) => { %>
+                        <img src="<%= data.customer_image %>" alt="">
+                    <% }) %>
+                    <% } if (seller) { %>
+                        <% Object.values(user_data).map((data) => { %>
+                            <img src="<%= data.seller_image %>" alt="">
+                        <% }) %>
+                    <% } %>
                 </div>
             </div>
             <div class="section_page">
                 <div class="section-page-text">
                     <h1>Detail</h1>
                 </div>
-                <div class="user_data">
-                    <h2>Full Name</h2>
-                    <% Object.values(user_data).map((data) => { %>
-                    <p><%= data.customer_fname %> <%= data.customer_lname %></p>
-                    <% }) %>
-                </div>
-                <div class="user_data">
-                    <h2>E-mail</h2>
-                    <% Object.values(user_data).map((data) => { %>
-                    <p><%= data.customer_email %></p>
-                    <% }) %>
-                </div>
+                <% if (customer) { %>
+                    <div class="user_data">
+                        <h2>Full Name</h2>
+                        <% Object.values(user_data).map((data) => { %>
+                        <p><%= data.customer_fname %> <%= data.customer_lname %></p>
+                        <% }) %>
+                    </div>
+                    <div class="user_data">
+                        <h2>E-mail</h2>
+                        <% Object.values(user_data).map((data) => { %>
+                        <p><%= data.customer_email %></p>
+                        <% }) %>
+                    </div>
+                    <div class="user_data">
+                        <% Object.values(user_data).map((data) => { %>
+                        <a href="/users/edit/customer_id=<%= data.customer_id %>" class="btn-profile">Edit Profile</a>
+                        <% }) %>
+                    </div>
+                <% } if (seller) { %>
+                    <div class="user_data">
+                        <h2>Full Name</h2>
+                        <% Object.values(user_data).map((data) => { %>
+                        <p><%= data.seller_fname %> <%= data.seller_lname %></p>
+                        <% }) %>
+                    </div>
+                    <div class="user_data">
+                        <h2>E-mail</h2>
+                        <% Object.values(user_data).map((data) => { %>
+                        <p><%= data.seller_email %></p>
+                        <% }) %>
+                    </div>
+                    <div class="user_data">
+                        <% Object.values(user_data).map((data) => { %>
+                        <a href="/users/edit/seller_id=<%= data.seller_id %>" class="btn-profile">Edit Profile</a>
+                        <% }) %>
+                    </div>
+                <% } %>
             </div>
         </div>
         <div class="footer_page">
             <div class="cart-history">
-                <div class="cart-history-list">
-                    <h3>Hamburger Double Cheese</h3>
-                    <p>Mcdonald</p>
-                    <strong>1.99 $</strong>
-                </div>
-                <div class="cart-history-list">
-                    <h3>Hamburger Double Cheese</h3>
-                    <p>Mcdonald</p>
-                    <strong>1.99 $</strong>
-                </div>
-                <div class="cart-history-list">
-                    <h3>Hamburger Double Cheese</h3>
-                    <p>Mcdonald</p>
-                    <strong>1.99 $</strong>
-                </div>
-                <div class="cart-history-list">
-                    <h3>Hamburger Double Cheese</h3>
-                    <p>Mcdonald</p>
-                    <strong>1.99 $</strong>
-                </div>
+                <% if (customer) { %>
+                    <% Object.values(history_cart).map((data) => { %>
+                        <div class="cart-history-list">
+                            <h3><%= data.cart_prod_name %></h3>
+                            <strong><%= data.cart_prod_price %> $</strong>
+                        </div>
+                    <% }) %>
+                <% } if (seller) { %>
+                    <% Object.values(product_own).map((data) => { %>
+                        <div class="cart-history-list">
+                            <h3><%= data.prod_name %></h3>
+                            <strong><%= data.prod_price %> $</strong>
+                        </div>
+                    <% }) %>
+                <% } %>
             </div>
+            <% if (customer) { %>
             <div class="address-customer-info">
+                <h2 style="padding: 0.3em 0 0.3em 0;">Customer Address</h2>
+                <hr style="margin-bottom: 0.5em;"/>
                 <% Object.values(user_data).map((data) => { %>
                 <h3><%= data.customer_place %></h3>
                 <p><%= data.customer_address %></p>
-                <button class="edit-address-btn">Change</button>
+                <button class="edit-address-btn">Change Address</button>
                 <div class="edit-address">
                     <form action="/users/add-address" method="post">
                         <p id="customer_place_label">Name Place / Builder</p>
@@ -79,9 +117,10 @@
                 </div>
                 <% }) %>
             </div>
+            <% } %>
         </div>
         <div class="btn-return-homepage-section">
-            <a href="/home/" class="btn-return-homepage">Return To Home Page</a>
+            <a href="/home/" class="btn-return-homepage">Return To Home Page <i class="fa fa-arrow-circle-left" aria-hidden="true"></i></a>
         </div>
     </div>
     <script src="../js/userProfile.js"></script>
