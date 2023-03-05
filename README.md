@@ -1,4 +1,4 @@
-# khai-kong-dot-com | E-com web
+# BearFood-dot-com | E-com web
 E-Commerce Full Stack Web app
 > Web Stack technology
 - HTML
@@ -8,3 +8,6 @@ E-Commerce Full Stack Web app
 - NodeJs
 - ExpressJs
 - MySQL
+> Software
+- Visual Studio Code
+- XAMPP
