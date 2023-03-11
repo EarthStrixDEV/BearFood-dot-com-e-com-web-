@@ -11,6 +11,7 @@ body {
     background-image: url("https://www.xtrafondos.com/wallpapers/resized/escandalosos-somos-osos-7867.jpg?s=large");
     background-attachment: fixed;
     background-size:auto;
+    width: 100%;
 }
 
 nav {
@@ -25,6 +26,12 @@ nav {
 nav h2 {
     font-size: 30px;
     font-weight: 700;
+}
+
+@media only screen and (max-width: 1120px) {
+    nav h2 {
+        margin-right: 1em;
+    }
 }
 
 nav ul {
@@ -107,6 +114,57 @@ i:active {
     color: #fff;
 }
 
+@media only screen and (max-width: 1120px) {
+    .icon-container {
+        display: flex;
+        flex-direction: column;
+        position: fixed;
+        left: 0;
+        top: 25%;
+        padding: 0;
+        width: 80px;
+        border: 1px solid #333;
+        border-top-right-radius: 12px;
+        border-bottom-right-radius: 12px;
+        overflow: hidden;
+    }
+
+    .icon-container span {
+        display: flex;
+        justify-content: center;
+        width: 100%;
+        height: 100%;
+        padding: 10px;
+        margin:0;
+        font-size: 1.5rem;
+        color: rgb(92, 92, 92);
+        border-bottom: 1px solid #333;
+    }
+
+    .icon-container span:nth-child(4) {
+        border-bottom: 0;
+    }
+
+    .icon-container i {
+        align-self: center;
+        position: relative;
+        left: 0;
+        top: 0;
+    }
+
+    .icon-container span:hover {
+        background-color: rgb(199, 199, 199);
+        border-radius: 0;
+        color: #fff;
+    }
+
+    .icon-container span:active {
+        background-color: #333;
+        border-radius: 0;
+        color: #fff;
+    }
+}
+
 /* footer */
 footer {
     display: flex;
@@ -114,7 +172,6 @@ footer {
     padding: 1.5rem;
     box-shadow: 0 -1px 2px -1px;
     margin-top: 5rem;
-    height: 200px;
     backdrop-filter: blur(7px);
 }
 

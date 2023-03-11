@@ -55,7 +55,7 @@
     </header>
     <section>
       <% Object.values(product_data).map((data) => { %>
-      <form action="/cart/adding-cart" method="post">
+      <form action="/cart/adding-cart" method="post" align="center">
         <div class="item-section">
           <input type="hidden" name="customer_id" value="<%= customer_id %>" />
           <input
@@ -90,7 +90,7 @@
     </section>
     <% } else { %>
     <div class="ifNotLogin">
-      <h1>Welcome To Khai Kong Dot Com</h1>
+      <h1>Welcome To BearFood Dot Com</h1>
       <p>Please Login before Visit Web Page</p>
       <small
         >If you aren't regis to be member ,you can go to register to regis to be

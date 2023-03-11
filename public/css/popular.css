@@ -66,8 +66,24 @@ small {
     grid-template-rows: repeat(2 ,1fr);
     margin-top: 4rem auto;
     padding-top: 2rem;
-    width: 1200px;
-    transform: translateX(30%);
+    margin: 0 auto;
+    max-width: 1200px;
+}
+
+@media only screen and (max-width: 1500px) {
+    .grid-category {
+        max-width: 900px;
+    }
+}
+@media only screen and (max-width: 1100px) {
+    .grid-category {
+        max-width: 800px;
+    }
+}
+@media only screen and (max-width: 900px) {
+    .grid-category {
+        max-width: 600px;
+    }
 }
 
 .grid-category-item:first-child {

@@ -29,9 +29,9 @@ header {
 }
 
 .logout {
-    border: 1px solid #333;
-    border-radius: 20px;
-    padding: 0.8rem 1rem 0.8rem 1rem;
+    border-bottom:3px solid #333;
+    padding: 0.8rem 4rem 0.8rem 4rem;
+    font-size: 30px;
     margin:1rem auto;
     text-decoration: none;
     color:#333;
@@ -39,6 +39,8 @@ header {
 }
 
 .logout:hover {
+    border-top-left-radius: 15px;
+    border-top-right-radius: 15px;
     background:#33333319;
     box-shadow: 0 0 10px #3333333d;
 }
@@ -176,6 +178,18 @@ header {
     backdrop-filter: blur(7px);
 }
 
+@media only screen and (max-width: 1355px){
+    .nav-category {
+        width: 60%;
+    }
+}
+
+@media only screen and (max-width: 950px){
+    .nav-category {
+        width: 60%;
+    }
+}
+
 .nav-category button {
     border: 1px solid #333;
     border-radius: 30px;
@@ -196,10 +210,9 @@ header {
 /* section grid */
 section {
     display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(300px ,1fr));
-    grid-template-rows: repeat(2, 1fr);
-    grid-gap: 2rem;
-    padding: 0 10rem 0 10rem;
+    grid-template-columns: repeat(auto-fill, minmax(350px ,1fr));
+    grid-gap: 3em;
+    padding: 2em 6em 2em 6em;
 }
 
 .item-section {
@@ -213,6 +226,29 @@ section {
     box-shadow: 0 1px 2px -1px;
     border-radius: 30px;
     backdrop-filter: blur(7px);
+}
+
+@media only screen and (max-width: 1070px) {
+    section {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        margin: 0 auto;
+    }
+
+    .item-section {
+        width: 600px;
+        height: 650px;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        padding: 1rem;
+        box-shadow: 0 1px 2px -1px;
+        border-radius: 30px;
+        backdrop-filter: blur(7px);
+    }
 }
 
 .item-section img {
@@ -252,4 +288,3 @@ section {
     background-color: #333;
     color: #fff;
 }
-

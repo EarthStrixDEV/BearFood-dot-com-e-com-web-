@@ -121,22 +121,22 @@
         <div class="form-container">
             <form action="/product/editProduct" method="post">
                 <% Object.values(data).map((data) => { %>
-                <input type="hidden" name="edit_prod_id" value="<%= data.prod_id %>">
+                <input type="hidden" name="prod_id" value="<%= data.prod_id %>">
                 <div class="form-control">
                     <p>Name</p>
-                    <input type="text" name="edit_username" id="edit_prod_username" value="<%= data.prod_name %>">
+                    <input type="text" name="prod_name" id="edit_prod_username" value="<%= data.prod_name %>">
                 </div>
                 <div class="form-control">
                     <p>Description</p>
-                    <input name="edit_fname" id="edit_prod_fname" value="<%= data.prod_description %>">
+                    <input type="text" name="prod_description" id="edit_prod_fname" value="<%= data.prod_description %>">
                 </div>
                 <div class="form-control">
                     <p>Price</p>
-                    <input type="text" name="edit_lname" id="edit_prod_lname" value="<%= data.prod_price %>">
+                    <input type="text" name="prod_price" id="edit_prod_lname" value="<%= data.prod_price %>">
                 </div>
                 <div class="form-control">
                     <p>Image Url</p>
-                    <input type="text" name="edit_image" class="edit_image" value="<%= data.prod_image %>">
+                    <input type="text" name="prod_image" class="edit_image" value="<%= data.prod_image %>">
                     <div class="preview-image">
                         <img src="<%= data.prod_image %>" alt="preview" class="preview">
                     </div>

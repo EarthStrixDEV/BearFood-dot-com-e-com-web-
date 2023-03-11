@@ -83,11 +83,8 @@
                         <td><%= item.prod_name %></td>
                         <td><%= item.prod_description %></td>
                         <td><%= item.prod_price %></td>
-                        <td><%= item.prod_store %></td>
-                        <td><%= item.prod_date %></td>
-                        <td></td>
                         <td><a href="/product/edit/product_id=<%= item.prod_id %>" class="btn btn-primary">Edit</a></td>
-                        <td><a href="/product/delete/<%= item.prod_id %>" class="btn btn-danger" onclick="return confirm('Are you sure to delete this product?')">Delete</a></td>
+                        <td><a href="/product/delete/product_id=<%= item.prod_id %>" class="btn btn-danger" onclick="return confirm('Are you sure to delete this product?')">Delete</a></td>
                     </tr>
                 <% }) %>
             </tbody>

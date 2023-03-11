@@ -8,7 +8,7 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <link rel="stylesheet" href="../css/promotion.css">
     <link rel="icon" href="http://pm1.narvii.com/6750/effb75eea9a6419839e5f8f18fdbad9721115ac4v2_00.jpg">
-    <title>Promotion</title>
+    <title>BearFood - Promotion</title>
 </head>
 <body>
     <%- include('navbar') %>
@@ -16,39 +16,38 @@
         <img src="../img/banner_promotion.png" alt="">
     </div>
     <div class="list-promotion-item">
-        <div class="promotion-item">
-            <div class="promotion-img-box">
-                <img src="https://api.time.com/wp-content/uploads/2014/08/475623249.jpg" alt="">
+        <% Object.values(products).map((data) => { %>
+        <form action="/cart/adding-cart" method="post">
+            <input type="hidden" name="customer_id" value="<%= customer_id %>" />
+            <input
+                type="hidden"
+                name="prod_id"
+                value="<%= data.prod_id %>"
+                class="id_product"
+            />
+            <input type="hidden" name="cart_prod_name" class="cart_prod_name" value="<%= data.prod_name %>">
+            <input
+                type="hidden"
+                name="prod_description"
+                value="<%= data.prod_description %>"
+                class="description_product"
+            />
+            <input type="hidden" name="cart_prod_date" value="" class="cart_prod_date">
+            <input type="hidden" name="prod_price" class="cart_prod_price" value="<%= data.prod_price %>">
+            <div class="promotion-item">
+                <div class="promotion-img-box">
+                    <img src="<%= data.prod_image %>" alt="">
+                </div>
+                <h1><%= data.prod_name %></h1>
+                <p><%= data.prod_description %></p>
+                <% if (customer) { %>
+                <button class="add-to-cart" type="submit">Add to Cart</button>
+                <% } else { %>
+                <button class="add-to-cart" disabled="true">Add to Cart</button>
+                <% } %>
             </div>
-            <h1>Pizza with <br> mozzarella cheese</h1>
-            <p>Pizza with Mozzarella Cheese: A Classic Dish that Never Goes Out of Style
-            Pizza is one of the most beloved foods in the world. It's easy to understand why: with its crispy crust, delicious sauce, and melted cheese, pizza is a perfect combination of textures and flavors. And when it comes to cheese, mozzarella is the king.</p>
-            <button>Buy Now</button>
-        </div>
-        <div class="promotion-item">
-            <div class="promotion-img-box">
-                <img src="https://kebab.vn/wp-content/uploads/2022/10/Double-Cheese.jpg" alt="">
-            </div>
-            <h1>Double Cheese Burger</h1>
-            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Nemo, nesciunt.</p>
-            <button>Buy Now</button>
-        </div>
-        <div class="promotion-item">
-            <div class="promotion-img-box">
-                <img src="https://insanelygoodrecipes.com/wp-content/uploads/2021/05/Grilled-BBQ-Skewers-with-Pineapples-and-Lemons.jpg" alt="">
-            </div>
-            <h1>BBQ</h1>
-            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Veritatis, vero.</p>
-            <button>Buy Now</button>
-        </div>
-        <div class="promotion-item">
-            <div class="promotion-img-box">
-                <img src="https://www.allrecipes.com/thmb/q2exnhyivkjuGhy8wHlbLHojz-0=/1500x0/filters:no_upscale():max_bytes(150000):strip_icc()/158140-Spaghetti-sauce-with-ground-beef-mfs-199-5996234f97614eb090b1e88fe91f5360.jpg" alt="">
-            </div>
-            <h1>Spaghetti with <br> Meat Sauce</h1>
-            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Libero, perferendis.</p>
-            <button>Buy Now</button>
-        </div>
+        </form>
+    <% }) %>
     </div>
     <footer>
         <div class="payment">

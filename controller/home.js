@@ -118,11 +118,21 @@ router.get('/popular', (req, res) => {
     }
 })
 router.get('/promotion', (req, res) => {
+    let query_products_promotion = `SELECT * FROM products ORDER BY RAND() LIMIT 4`
     if (req.session.customer || req.session.seller) {
-        res.render("promotion", {
-            customer: req.session.customer,
-            seller: req.session.seller,
-        });
+        try {
+            sqlConnector.query(query_products_promotion, (err, result) => {
+                if (err) throw err;
+                res.render("promotion", {
+                    customer: req.session.customer,
+                    seller: req.session.seller,
+                    customer_id: req.session.customer_id,
+                    products: result
+                });
+            })
+        } catch (error) {
+            res.sendStatus(400).send(error)
+        }
     } else {
         res.redirect("/home/");
     }
