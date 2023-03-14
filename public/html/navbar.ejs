@@ -4,15 +4,15 @@
     rel="stylesheet"
     href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"
 />
-
+<link rel="stylesheet" href="../css/navbar.css">
 <nav>
-    <h2>BearFood Dot Com.</h2>
+    <h2>BearFood Dot Com. <img src="https://cdn-icons-png.flaticon.com/512/2098/2098318.png" alt=""></h2>
     <ul>
         <% if (customer || seller) { %>
             <a href="/home/" id="home">Home <i class="fa fa-home" aria-hidden="true"></i></a>
             <a href="/home/popular">Popular <i class="fa fa-star" aria-hidden="true"></i></a>
             <a href="/home/promotion">Promotion <i class="fa fa-bullhorn" aria-hidden="true"></i></a>
-            <a href="">About <i class="fa fa-info-circle" aria-hidden="true"></i></a>
+            <a href="/home/about">About <i class="fa fa-info-circle" aria-hidden="true"></i></a>
         <% } %>
     </ul>
     <div class="icon-container">

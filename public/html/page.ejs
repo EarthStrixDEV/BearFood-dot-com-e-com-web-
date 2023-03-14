@@ -11,7 +11,9 @@
     <!-- font awesome -->
   </head>
   <body>
+    <% if (customer || seller) { %>
     <%- include('navbar') %>
+    <% } %>
     <header>
       <% if (customer || seller) { %>
       <div class="welcome-block">
@@ -90,17 +92,19 @@
     </section>
     <% } else { %>
     <div class="ifNotLogin">
-      <h1>Welcome To BearFood Dot Com</h1>
-      <p>Please Login before Visit Web Page</p>
-      <small
-        >If you aren't regis to be member ,you can go to register to regis to be
-        member</small
-      >
-      <a href="/users/login_customer" class="logout">Login</a>
+        <img src="https://cdn-icons-png.flaticon.com/512/2098/2098318.png" alt="">
+        <h1>Welcome To BearFood Dot Com</h1>
+        <p>Please Login before Visit Web Page</p>
+        <small
+            >If you aren't regis to be member ,you can go to register to regis to be
+            member</small
+        >
+        <a href="/users/login_customer" class="logout">Login</a>
     </div>
     <% } %>
-    <footer>
-      <div class="payment">
+    <% if (customer || seller) { %>
+        <footer>
+            <div class="payment">
         <h4>Khai Kong Dot Com</h4>
         <strong>E payment</strong>
         <div class="payment-icon">
@@ -128,13 +132,14 @@
         <p>+6689-xxx-xxxx</p>
         <p>khaikongdotcom@gmail.com</p>
         <div class="social-media-icon">
-          <i class="fa fa-facebook" aria-hidden="true"></i>
-          <i class="fa fa-twitter" aria-hidden="true"></i>
+            <i class="fa fa-facebook" aria-hidden="true"></i>
+            <i class="fa fa-twitter" aria-hidden="true"></i>
           <i class="fa fa-instagram" aria-hidden="true"></i>
           <i class="fa fa-youtube" aria-hidden="true"></i>
         </div>
       </div>
     </footer>
+    <% } %>
     <%- include('sweetalert_script') %>
     <script src="../js/home.js"></script>
   </body>

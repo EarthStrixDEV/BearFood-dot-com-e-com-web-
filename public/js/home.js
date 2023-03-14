@@ -3,8 +3,8 @@ let item = document.getElementById('item')
 let text_image = document.querySelector('.text-image')
 let add_item_form = document.querySelectorAll(
   "form[action='/cart/adding-cart']"
-);
-let name_product = document.querySelectorAll(".name-product");
+)
+let name_product = document.querySelectorAll(".name-product")
 let price_product = document.querySelectorAll('.price_product')
 let id_product = document.querySelectorAll('.id_product')
 let description_product = document.querySelectorAll('.description_product')

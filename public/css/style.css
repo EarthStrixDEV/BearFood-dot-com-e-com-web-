@@ -26,6 +26,20 @@ header {
     flex-direction: column;
     align-items: center;
     line-height: 40px;
+    width: 100%;
+    padding: 3em 0;
+    backdrop-filter: filter(10px);
+    font-size: 1.4em;
+}
+
+.ifNotLogin p {
+    margin-top: 1em;
+}
+
+.ifNotLogin img {
+    width: 200px;
+    height: 200px;
+    margin-bottom: 2em;
 }
 
 .logout {
@@ -106,6 +120,7 @@ header {
     display: flex;
     justify-content: center;
     align-items: center;
+    overflow: hidden;
 }
 
 .right-image-header img {
@@ -116,16 +131,14 @@ header {
 }
 
 .text-image {
-    width: 100%;
-    height: 100%;
+    width: auto;
+    height: auto;
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
     position: absolute;
     background-color: rgba(229, 229, 229, 0.451);
-    width: 834px;
-    height: 567px;
     border-radius: 30px;
     visibility: hidden;
 }

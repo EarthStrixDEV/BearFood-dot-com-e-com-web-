@@ -1,8 +1,6 @@
 const express = require('express')
 const path = require('path')
 const sqlConnector = require('../model/products')
-const {render} = require('ejs')
-const { query } = require('express')
 const router = express.Router()
 
 router.post("/login_customer", (req, res) => {
@@ -137,9 +135,19 @@ router.get('/promotion', (req, res) => {
         res.redirect("/home/");
     }
 })
+router.get('/about', (req, res) => {
+    if (req.session.customer || req.session.seller) {
+        res.render("about", {
+            customer: req.session.customer,
+            seller: req.session.seller,
+        });
+    } else {
+        res.redirect("/home/");
+    }
+})
 router.get('/cart', (req, res) => {
     const customer_session = req.session.customer_id;
-    let query_cart = `SELECT * FROM cart WHERE customer_id = ${customer_session} AND cart_checkout_status IS NULL; SELECT customer_id FROM customer WHERE customer_id = '${req.session.customer_id}'`;
+    let query_cart = `SELECT * FROM cart WHERE customer_id = ${customer_session} AND cart_checkout_status IS NULL; SELECT customer_id FROM customer WHERE customer_id = '${req.session.customer_id}'; SELECT FORMAT(sum(cart_prod_price),'N2') as 'total_price' FROM cart WHERE customer_id = ${req.session.customer_id} AND cart_checkout_status IS NULL`;
     if (req.session.customer || req.session.seller) {
         try {
             sqlConnector.query(query_cart, (err, result) => {
@@ -148,8 +156,10 @@ router.get('/cart', (req, res) => {
                     customer: req.session.customer,
                     seller: req.session.seller,
                     data_cart: result[0],
-                    customer_id: result[1]
+                    customer_id: result[1],
+                    total_price: result[2]
                 });
+                console.log(result[3]);
             })
         } catch (error) {
             res.sendStatus(400).send(error)

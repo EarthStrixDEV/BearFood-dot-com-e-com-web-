@@ -8,15 +8,13 @@
 }
 
 body {
-    background-image: url("https://www.xtrafondos.com/wallpapers/resized/escandalosos-somos-osos-7867.jpg?s=large");
+    background-image: url("https://i.pinimg.com/564x/6e/cd/eb/6ecdeb6db0d9daa8128c5a0b50db8db4.jpg");
     background-attachment: fixed;
     background-size: auto;
-    backdrop-filter: blur(10px);
 }
 
 header {
-    margin: 1rem 0 1rem 0;
-    backdrop-filter: blur(10px);
+    margin: 1rem 0 0 0;
 }
 
 .header-name {
@@ -77,4 +75,12 @@ header {
 .header-item-adder a:active {
     background-color: #333;
     color: #fff;
+}
+
+table tr th {
+    font-size: 30px;
+}
+
+table tr td {
+    font-size: 20px;
 }

@@ -83,10 +83,13 @@
         <div class="footer_page">
             <div class="cart-history">
                 <% if (customer) { %>
+                    <p class="cart-history-header">Cart History</p>
                     <% Object.values(history_cart).map((data) => { %>
                         <div class="cart-history-list">
                             <h3><%= data.cart_prod_name %></h3>
                             <strong><%= data.cart_prod_price %> $</strong>
+                            <br>
+                            <small>Add Date: <%= data.cart_prod_date %></small>
                         </div>
                     <% }) %>
                 <% } if (seller) { %>
@@ -100,7 +103,7 @@
             </div>
             <% if (customer) { %>
             <div class="address-customer-info">
-                <h2 style="padding: 0.3em 0 0.3em 0;">Customer Address</h2>
+                <h3 style="padding: 0.3em 0 0.3em 0;">Customer Address</h3>
                 <hr style="margin-bottom: 0.5em;"/>
                 <% Object.values(user_data).map((data) => { %>
                 <h3><%= data.customer_place %></h3>

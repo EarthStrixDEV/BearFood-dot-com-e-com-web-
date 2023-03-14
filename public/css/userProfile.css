@@ -8,7 +8,7 @@
 }
 
 body {
-    background-image: url("https://www.xtrafondos.com/wallpapers/resized/escandalosos-somos-osos-7867.jpg?s=large");
+    background-image: url("../img/07039b0779fea365e2d41117c128ea4c.jpg");
     background-attachment: fixed;
     background-size: auto;
 }
@@ -19,7 +19,8 @@ body {
     margin: 2em auto;
     padding: 1em 2em 1em 2em;
     background-color: #33333310;
-    backdrop-filter: blur(7px);
+    backdrop-filter: blur(30px);
+    border-radius: 20px;
 }
 
 .main-section {
@@ -110,6 +111,13 @@ body {
     scroll-behavior: smooth;
     background-color: #fff;
     border-radius: 20px;
+}
+
+.cart-history .cart-history-header {
+    text-align: center;
+    padding-bottom: 1em;
+    border-bottom: 1px solid #33333321;
+    font-size: 1.1em;
 }
 
 .cart-history .cart-history-list {

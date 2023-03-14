@@ -69,7 +69,9 @@
             </div>
             <div class="count-price-box">
                 <p class="count-label">Total</p>
-                <p class="total-price">1.99$</p>
+                <% Object.values(total_price).map((data) => { %>
+                <p class="total-price"><%= data.total_price %>$</p>
+                <% }) %>
             </div>
         </div>
         <div class="operation-paying">
