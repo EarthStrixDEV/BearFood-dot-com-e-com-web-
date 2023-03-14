@@ -124,9 +124,9 @@ i:active {
     .icon-container {
         display: flex;
         flex-direction: column;
-        position: fixed;
+        position: absolute;
         left: 0;
-        top: 25%;
+        top: 180%;
         padding: 0;
         width: 80px;
         border: 1px solid #333;
