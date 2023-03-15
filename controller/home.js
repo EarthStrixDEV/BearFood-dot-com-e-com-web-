@@ -171,7 +171,7 @@ router.get('/cart', (req, res) => {
 router.get("/products", (req, res) => {
     const seller_id = req.session.seller_id;
     let Query = `SELECT * FROM products WHERE seller_id = ${ seller_id }; SELECT count(*) as 'total_product' FROM products WHERE seller_id = ${ seller_id }; SELECT count(*) as 'total_cart' FROM cart; SELECT count(*) as 'total_seller' FROM seller; SELECT count(*) as 'total_order' FROM cart WHERE cart_checkout_status = 1`;
-    if (req.session.seller_id) {
+    if (req.session.seller) {
         try {
             sqlConnector.query(Query, (err, result) => {
             if (err) throw err;
