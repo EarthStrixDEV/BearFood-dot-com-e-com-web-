@@ -2,6 +2,7 @@ const express = require("express")
 const path = require("path")
 const app = express()
 const express_session = require('express-session')
+const port = 5000
 /* import controller */
 const home = require('./controller/home')
 const users = require('./controller/users')
@@ -28,8 +29,4 @@ app.use('/users', users)
 app.use('/product', product)
 app.use('/cart', cart)
 
-app.get('/test', (req, res) => {
-    res.send('Test Project')
-})
-
-app.listen(5000,() => console.log(`server is running on port 5000`))
+app.listen(port,() => console.log(`server is running on port ${port}`))

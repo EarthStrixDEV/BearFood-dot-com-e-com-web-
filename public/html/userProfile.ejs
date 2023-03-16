@@ -59,8 +59,13 @@
                         <a href="/users/edit/customer_id=<%= data.customer_id %>" class="btn-profile">Edit Profile</a>
                         <% }) %>
                     </div>
-                <% } if (seller) { %>
                     <div class="user_data">
+                        <% Object.values(user_data).map((data) => { %>
+                        <a href="/users/delete/customer_id=<%= data.customer_id %>" class="btn-profile" onclick="return confirm('Are you sure to delete this account!!')">Delete Account</a>
+                        <% }) %>
+                    </div>
+                    <% } if (seller) { %>
+                        <div class="user_data">
                         <h2>Full Name</h2>
                         <% Object.values(user_data).map((data) => { %>
                         <p><%= data.seller_fname %> <%= data.seller_lname %></p>
@@ -75,6 +80,11 @@
                     <div class="user_data">
                         <% Object.values(user_data).map((data) => { %>
                         <a href="/users/edit/seller_id=<%= data.seller_id %>" class="btn-profile">Edit Profile</a>
+                        <% }) %>
+                    </div>
+                    <div class="user_data">
+                        <% Object.values(user_data).map((data) => { %>
+                        <a href="/users/delete/seller_id=<%= data.seller_id %>" class="btn-profile" onclick="return confirm('Are you sure to delete this account!!')">Delete Account</a>
                         <% }) %>
                     </div>
                 <% } %>

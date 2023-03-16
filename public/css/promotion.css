@@ -4,13 +4,61 @@
     --theme-text-background-color: rgb(240, 236, 240);
 }
 
-.head-banner {
+.owl-carousel {
     width: 100%;
-    height: 100%;
 }
 
-.head-banner img {
+.owl-carousel img {
     width: 100%;
+    height: 800px;
+    filter: brightness(70%);
+    object-fit:cover;
+}
+
+.float-caption {
+    position: absolute;
+    left: 30%;
+    transform: translate(25%, -220%);
+    width: 700px;
+    height: 250px;
+    z-index: 1;
+}
+
+.float-caption h2 {
+    -webkit-text-fill-color: brown;
+    /* Will override color (regardless of order) */
+    -webkit-text-stroke-width: 1px;
+    -webkit-text-stroke-color: rgb(253, 196, 26);
+    font-size: 5rem;
+    width: 450px;
+    padding: 0.6rem;
+    text-align: center;
+    letter-spacing: 0.9px;
+}
+
+.float-caption h3:not(span) {
+    padding: var(--padding-text-float);
+    color: #fff;
+    text-shadow: 3px 3px 2px rgba(25, 25, 25, 0.519);
+    font-size: 1.9rem;
+    letter-spacing: 2px;
+    transform: translateX(15%);
+    color: #fff;
+    -webkit-text-fill-color: white;
+    /* Will override color (regardless of order) */
+    -webkit-text-stroke-width: 1px;
+    -webkit-text-stroke-color: brown;
+}
+
+.float-caption span {
+    background-color: #333;
+    color: #fff;
+    padding: 0.5em;
+    border-radius: 10px;
+    -webkit-text-fill-color: white;
+    /* Will override color (regardless of order) */
+    -webkit-text-stroke-width: 1px;
+    -webkit-text-stroke-color: #ffffff00;
 }
 
 .list-promotion-item {
@@ -75,12 +123,25 @@
     display: flex;
     flex-direction: column;
     justify-content: center;
-    width: 50%;
+    width: 40%;
     text-align: center;
     letter-spacing: 0.7px;
     margin: 0 0 0 1rem;
     padding: 0 1rem 0 1rem;
     word-wrap: break-word;
+}
+
+.promotion-item strong {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    width: 20%;
+    text-align: center;
+    letter-spacing: 0.7px;
+    margin: 0 0 0 1rem;
+    padding: 0 1rem 0 1rem;
+    word-wrap: break-word;
+    font-size: 1.3em;
 }
 
 .promotion-item button {

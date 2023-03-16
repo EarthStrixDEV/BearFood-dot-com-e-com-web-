@@ -8,12 +8,33 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <link rel="stylesheet" href="../css/promotion.css">
     <link rel="icon" href="http://pm1.narvii.com/6750/effb75eea9a6419839e5f8f18fdbad9721115ac4v2_00.jpg">
+    <link rel="stylesheet" href="../OwlCarousel2-2.3.4/dist/assets/owl.carousel.min.css">
+    <link rel="stylesheet" href="../OwlCarousel2-2.3.4/dist/assets/owl.theme.default.min.css">
     <title>BearFood - Promotion</title>
 </head>
 <body>
     <%- include('navbar') %>
-    <div class="head-banner">
-        <img src="../img/banner_promotion.png" alt="">
+    <div class="owl-carousel">
+        <div>
+            <img src="../img/อาหาร.jpg" alt="">
+        </div>
+        <div>
+            <img src="../img/อาหาร43.jpg" alt="">
+        </div>
+        <div>
+            <img src="../img/อาหาร40.jpg" alt="">
+        </div>
+        <div>
+            <img src="../img/อาหาร19 - Copy.jpg" alt="">
+        </div>
+        <div>
+            <img src="../img/อาหาร32.jpg" alt="">
+        </div>
+    </div>
+    <div class="float-caption">
+        <h2>SALE!!!</h2>
+        <h3>FOOD MENU</h3>
+        <h3>BEST <span>DEAL</span></h3>
     </div>
     <div class="list-promotion-item">
         <% Object.values(products).map((data) => { %>
@@ -40,6 +61,7 @@
                 </div>
                 <h1><%= data.prod_name %></h1>
                 <p><%= data.prod_description %></p>
+                <strong><%= data.prod_price %>$</strong>
                 <% if (customer) { %>
                 <button class="add-to-cart" type="submit">Add to Cart</button>
                 <% } else { %>
@@ -85,5 +107,8 @@
             </div>
         </div>
     </footer>
+    <script src="https://code.jquery.com/jquery-3.6.3.js"></script>
+    <script src="../OwlCarousel2-2.3.4/dist/owl.carousel.min.js"></script>
+    <script src='../js/slider.js'></script>
 </body>
 </html>

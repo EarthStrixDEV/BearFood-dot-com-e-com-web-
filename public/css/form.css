@@ -19,8 +19,8 @@
     flex-direction: row;
     justify-content: flex-end;
     background-color: buttonface;
-    background: url("https://www.xtrafondos.com/wallpapers/resized/escandalosos-somos-osos-7867.jpg?s=large");
-    background-attachment: fixed;
+    background: url("https://i.pinimg.com/564x/07/03/9b/07039b0779fea365e2d41117c128ea4c.jpg");
+    background-repeat: repeat;
     backdrop-filter: blur(5%);
     height: 100%;
 }

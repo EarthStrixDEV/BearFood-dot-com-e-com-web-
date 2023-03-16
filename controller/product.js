@@ -58,7 +58,7 @@ router.post("/add_products", (req, res) => {
     const prod_image = req.body.prod_image;
     const seller_id = req.body.seller_id;
     
-    let Query = `INSERT INTO products (prod_name ,prod_description ,prod_price ,prod_image ,seller_id) VALUES ('${prod_name}','${prod_description}',${prod_price},"${prod_image}",${seller_id});`;
+    let Query = `INSERT INTO products (prod_name ,prod_description ,prod_price ,prod_image ,seller_id) VALUES ("${prod_name}","${prod_description}",${prod_price},'${prod_image}',${seller_id});`;
     try {
         sqlConnector.query(Query, (err, result) => {
         if (err) throw err;

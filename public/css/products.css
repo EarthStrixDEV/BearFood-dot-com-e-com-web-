@@ -77,10 +77,7 @@ header {
     color: #fff;
 }
 
-table tr th {
-    font-size: 30px;
-}
-
-table tr td {
-    font-size: 20px;
+table tr th ,td {
+    font-size: 24px;
+    border-spacing: 50px;
 }
