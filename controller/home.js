@@ -121,8 +121,8 @@ router.post('/search', (req, res) => {
 })
 router.get('/userProfile', (req, res) => {
     let query_customer = `SELECT * FROM customer WHERE customer_id = '${ req.session.customer_id }'; SELECT * FROM cart WHERE customer_id = ${ req.session.customer_id } AND cart_checkout_status = 1;`;
-    let query_seller = `SELECT * FROM seller WHERE seller_id = ${req.session.seller_id}; SELECT * FROM products WHERE seller_id = ${req.session.seller_id};`
-    if (req.session.customer_id) {
+    let query_seller = `SELECT * FROM seller WHERE seller_id = ${req.session.seller_id}; SELECT * FROM products WHERE seller_id = ${req.session.seller_id };`
+    if (req.session.customer) {
         try {
             sqlConnector.query(query_customer, (err, result) => {
                 if (err) throw err;
@@ -132,11 +132,13 @@ router.get('/userProfile', (req, res) => {
                     user_data: result[0],
                     history_cart: result[1]
                 });
+                console.log(result[0]);
+                console.log(result[1]);
             })
         } catch (error) {
-            res.sendStatus(400).send(error)
+            res.sendStatus(400).send(error);
         }
-    } else if (req.session.seller_id) {
+    } else if (req.session.seller) {
         try {
             sqlConnector.query(query_seller, (err, result) => {
                 if (err) throw err;
@@ -148,7 +150,7 @@ router.get('/userProfile', (req, res) => {
                 })
             })
         } catch (error) {
-            res.sendStatus(400).send(error)
+            res.sendStatus(400).send(error);
         }
     } else {
         res.redirect('/home/')

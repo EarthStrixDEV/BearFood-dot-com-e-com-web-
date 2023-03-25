@@ -82,6 +82,10 @@ table {
 }
 
 table th {
-    font-size: 24px;
+    font-size: 30px;
     border-spacing: 50px;
+}
+
+table td {
+    font-size: 20px;
 }

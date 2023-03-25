@@ -58,13 +58,14 @@ body {
     width: 100%;
     padding: 0.8em;
     display: flex;
-    justify-content: space-between;
+    justify-content: flex-start;
 }
 
 .counter-price-item .count-price-box {
     display: inline-flex;
     background-color: #fff;
     border:1px solid #33333336;
+    margin: 1rem;
 }
 
 .counter-price-item .count-price-box .count-label,.total-price {

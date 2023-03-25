@@ -6,7 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="../css/userProfile.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-    <link rel="icon" href="http://pm1.narvii.com/6750/effb75eea9a6419839e5f8f18fdbad9721115ac4v2_00.jpg">
+    <link rel="icon" href="../img/icon_header.png" />
     <title>BearFood - UserProfile</title>
 </head>
 <body>
@@ -103,9 +103,13 @@
                         </div>
                     <% }) %>
                 <% } if (seller) { %>
+                    <p class="cart-history-header">Products Own</p>
                     <% Object.values(product_own).map((data) => { %>
                         <div class="cart-history-list">
                             <h3><%= data.prod_name %></h3>
+                            <hr style="margin: 0.7rem 0 0.7rem 0;">
+                            <p><%= data.prod_description %></p>
+                            <hr style="margin: 0.7rem 0 0.7rem 0;">
                             <strong><%= data.prod_price %> $</strong>
                         </div>
                     <% }) %>
