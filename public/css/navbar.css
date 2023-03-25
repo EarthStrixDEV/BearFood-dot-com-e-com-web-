@@ -22,7 +22,10 @@ nav {
     flex-wrap:wrap;
     padding: 1.5rem 2rem 0 2rem;
     box-shadow: 0 1px 2px -1px;
-    backdrop-filter: blur(3px);
+    background-color: #fff;
+    position: sticky;
+    top: 0;
+    z-index: 999;
 }
 
 nav img {

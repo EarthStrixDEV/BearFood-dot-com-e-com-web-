@@ -4,13 +4,9 @@
     --theme-text-background-color: rgb(240, 236, 240);
 }
 
-.owl-carousel {
+#slider-cover-promotion img {
     width: 100%;
-}
-
-.owl-carousel img {
-    width: 100%;
-    height: 800px;
+    height: 650px;
     filter: brightness(70%);
     object-fit:cover;
 }

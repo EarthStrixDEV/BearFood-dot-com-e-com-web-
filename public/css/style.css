@@ -220,6 +220,7 @@ section {
     width: 100%;
     height: 70%;
     object-fit:cover;
+    overflow: hidden;
     border-radius: 30px;
 }
 
@@ -236,9 +237,8 @@ section {
 }
 
 .item-section button {
-    width: 130px;
-    height: 67px;
-    margin-top: 1rem;
+    padding: 0.8rem;
+    margin: 1rem 0 0.8rem 0;
     border:1px solid #33333385;
     border-radius: 15px;
     background-color: #fff;
