@@ -17,7 +17,7 @@ router.post("/login_customer", (req, res) => {
             res.redirect('/home/')
         } else {
             res.send(
-            '<script>alert("Email or Password is incorrect!"); window.location.href = "/users/login_customer";</script>'
+            '<script>alert("Username or Password is invalid! ,Please Login again"); window.location.href = "/users/login_customer";</script>'
             );
         }
         });
@@ -39,7 +39,7 @@ router.post("/login_seller", (req, res) => {
             res.redirect('/home/')
         } else {
             res.send(
-            '<script>alert("Email or Password is incorrect!"); window.location.href = "/users/login_seller";</script>'
+            '<script>alert("Username or Password is invalid! ,Please Login again!"); window.location.href = "/users/login_seller";</script>'
             );
         }
         });
@@ -55,7 +55,7 @@ router.get('/logout', (req, res) => {
     }
 })
 router.get('/', (req, res) => {
-    let Query = `SELECT * FROM products`
+    let Query = `SELECT * FROM products`;
     try {
         sqlConnector.query(Query, (err, result) => {
             if (err) throw err
@@ -68,6 +68,55 @@ router.get('/', (req, res) => {
         })
     } catch (err) {
         res.sendStatus(400).send(err)
+    }
+})
+router.get("/best_product", (req, res) => {
+    let query_best_product = `SELECT * FROM products WHERE prod_id = 6 or prod_id = 24 or prod_id = 21 or prod_id = 12`;
+    try {
+        sqlConnector.query(query_best_product, (err, result) => {
+            if (err) throw err;
+            res.render("page", {
+                product_data: result,
+                customer: req.session.customer,
+                seller: req.session.seller,
+                customer_id: req.session.customer_id,
+            });
+        })
+    } catch {
+        res.sendStatus(400).send(err);
+    }
+})
+router.get('/recommend', (req, res) => {
+    let query_recommend = `SELECT * FROM products ORDER BY RAND() LIMIT 6`;
+    try {
+        sqlConnector.query(query_recommend, (err, result) => {
+            if (err) throw err;
+            res.render("page", {
+                product_data: result,
+                customer: req.session.customer,
+                seller: req.session.seller,
+                customer_id: req.session.customer_id,
+            });
+        });
+    } catch {
+        res.sendStatus(400).send(err);
+    }
+})
+router.post('/search', (req, res) => {
+    let search_product = req.body.search_product;
+    let query_search = `SELECT * FROM products WHERE prod_name LIKE '%${ search_product }%'`;
+    try {
+        sqlConnector.query(query_search, (err, result) => {
+            if (err) throw err;
+            res.render("page", {
+                customer: req.session.customer,
+                seller: req.session.seller,
+                product_data: result,
+                customer_id: req.session.customer_id,
+            });
+        })
+    } catch (error) {
+        res.sendStatus(400).send(error);
     }
 })
 router.get('/userProfile', (req, res) => {
@@ -174,14 +223,14 @@ router.get("/products", (req, res) => {
     if (req.session.seller) {
         try {
             sqlConnector.query(Query, (err, result) => {
-            if (err) throw err;
-            res.render("products", {
-                data: result[0],
-                total_product: result[1],
-                total_cart: result[2],
-                total_seller: result[3],
-                total_order: result[4]
-            });
+                if (err) throw err;
+                res.render("products", {
+                    data: result[0],
+                    total_product: result[1],
+                    total_cart: result[2],
+                    total_seller: result[3],
+                    total_order: result[4]
+                });
             });
         } catch (err) {
             res.sendStatus(400).send(err);

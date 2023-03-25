@@ -8,8 +8,8 @@ const add_count_number = document.querySelectorAll(".add-count-number");
 const body = document.querySelector('body')
 const tbody = document.querySelector('tbody')
 const tr = tbody.querySelectorAll('tr')
-const checkout = document.querySelector("form[action='/cart/check-out']");
-const clear_cart = document.querySelector("form[action='/cart/delete_cart']");
+const checkout = document.getElementById("check-out");
+const clear_cart = document.getElementById("delete-cart")
 
 for (let i = 0; i < add_count_increase.length; i++) {
     add_count_increase[i].addEventListener('click', (event) => {

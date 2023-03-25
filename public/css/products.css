@@ -77,7 +77,11 @@ header {
     color: #fff;
 }
 
-table tr th ,td {
+table {
+    backdrop-filter: blur(2px);
+}
+
+table th {
     font-size: 24px;
     border-spacing: 50px;
 }

@@ -46,45 +46,45 @@
         </div>
       </div>
       <div class="nav-category">
-        <button class="btn-category">Best Product</button>
-        <button class="btn-category">Popular</button>
-        <button class="btn-category">Best seller</button>
+        <a href="/home/" class="btn-category">All Product</a>
+        <a href="/home/best_product" class="btn-category">Best Product</a>
+        <a href="/home/recommend" class="btn-category">Recommend</a>
       </div>
     </header>
     <section>
-      <% Object.values(product_data).map((data) => { %>
-      <form action="/cart/adding-cart" method="post" align="center">
+        <% Object.values(product_data).map((data) => { %>
+        <form action="/cart/adding-cart" method="post" align="center" class="adding-item">
         <div class="item-section">
-          <input type="hidden" name="customer_id" value="<%= customer_id %>" />
-          <input
+            <input type="hidden" name="customer_id" value="<%= customer_id %>" />
+            <input
             type="hidden"
             name="prod_id"
             value="<%= data.prod_id %>"
             class="id_product"
-          />
-          <input type="hidden" name="cart_prod_name" class="cart_prod_name" value="<%= data.prod_name %>">
-          <input
+            />
+            <input type="hidden" name="cart_prod_name" class="cart_prod_name" value="<%= data.prod_name %>">
+            <input
             type="hidden"
             name="prod_description"
             value="<%= data.prod_description %>"
             class="description_product"
-          />
-          <input type="hidden" name="cart_prod_date" value="" class="cart_prod_date">
-          <input type="hidden" name="prod_price" class="cart_prod_price" value="<%= data.prod_price %>">
-          <img
+            />
+            <input type="hidden" name="cart_prod_date" value="" class="cart_prod_date">
+            <input type="hidden" name="prod_price" class="cart_prod_price" value="<%= data.prod_price %>">
+            <img
             src="<%= data.prod_image %>"
             alt=""
-          />
-          <p class="name-product"><%= data.prod_name %></p>
-          <strong class="price_product"
+            />
+            <p class="name-product"><%= data.prod_name %></p>
+            <strong class="price_product"
             >$<%= data.prod_price %></strong
-          >
+            >
         <% if (customer) { %>
             <button class="add-to-cart" type="submit">Add to Cart</button>
         <% } %>
         </div>
-      </form>
-      <% }) %>
+        </form>
+        <% }) %>
     </section>
     <% } else { %>
     <div class="ifNotLogin">
@@ -95,42 +95,7 @@
     </div>
     <% } %>
     <% if (customer || seller) { %>
-        <footer>
-            <div class="payment">
-        <h4>Khai Kong Dot Com</h4>
-        <strong>E payment</strong>
-        <div class="payment-icon">
-          <i class="fa fa-cc-visa" aria-hidden="true"></i>
-          <i class="fa fa-cc-mastercard" aria-hidden="true"></i>
-          <i class="fa fa-cc-paypal" aria-hidden="true"></i>
-          <i class="fa fa-cc-amex" aria-hidden="true"></i>
-        </div>
-      </div>
-      <div class="menu">
-        <ul>
-          <li>Popular</li>
-          <li>Promotion</li>
-          <li>Category</li>
-          <li>About</li>
-        </ul>
-        <ul>
-          <li>FAQ</li>
-          <li>Privacy Policy</li>
-          <li>Terms & Conditions</li>
-          <li>Return Policy</li>
-        </ul>
-      </div>
-      <div class="contact">
-        <p>+6689-xxx-xxxx</p>
-        <p>khaikongdotcom@gmail.com</p>
-        <div class="social-media-icon">
-            <i class="fa fa-facebook" aria-hidden="true"></i>
-            <i class="fa fa-twitter" aria-hidden="true"></i>
-          <i class="fa fa-instagram" aria-hidden="true"></i>
-          <i class="fa fa-youtube" aria-hidden="true"></i>
-        </div>
-      </div>
-    </footer>
+        <%- include('footer') %>
     <% } %>
     <%- include('sweetalert_script') %>
     <script src="../js/home.js"></script>

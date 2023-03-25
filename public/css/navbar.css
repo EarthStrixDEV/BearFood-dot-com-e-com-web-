@@ -18,7 +18,9 @@ nav {
     display: flex;
     flex-direction: row;
     justify-content: space-between;
-    padding: 0.8rem 2rem 0.8rem 2rem;
+    align-items: center;
+    flex-wrap:wrap;
+    padding: 1.5rem 2rem 0 2rem;
     box-shadow: 0 1px 2px -1px;
     backdrop-filter: blur(3px);
 }
@@ -26,7 +28,6 @@ nav {
 nav img {
     width: 40px;
     height: 40px;
-    transform: translateY(20%);
 }
 
 nav h2 {
@@ -45,6 +46,7 @@ nav ul {
     flex-direction: row;
     list-style: none;
     justify-content: space-evenly;
+    padding: 0;
 }
 
 nav ul a {
@@ -89,7 +91,8 @@ i:active {
 .icon-container {
     display: flex;
     justify-content: flex-end;
-    padding-right: 2rem;
+    align-items: center;
+    padding: 0 0 1rem 1rem;
 }
 
 .icon-container span {

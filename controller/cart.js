@@ -32,7 +32,7 @@ router.post('/delete_cart', (req, res) => {
             console.log(result);
             res.redirect('/home/cart')
         })
-    } catch (error) {
+    } catch (error) { 
         res.sendStatus(400).send(error)
     }
 })
@@ -51,7 +51,8 @@ router.get('/delete/:id', (req, res) => {
 })
 router.post("/check-out", (req, res) => {
     const customer_id = req.body.customer_id;
-    let checkOut_query = `UPDATE cart SET cart_checkout_status = 1 WHERE cart_checkout_status IS NULL AND customer_id = ${ customer_id }`
+    const prod_id_in_cart = req.body.prod_id_in_cart;
+    let checkOut_query = `UPDATE cart,product SET cart_checkout_status = 1 ,prod_order = (prod_order + 1) WHERE cart_checkout_status IS NULL AND customer_id = ${ customer_id } AND prod_id = ${ prod_id_in_cart }`;
     try {
         sqlConnector.query(checkOut_query, (err ,result) => {
             if (err) throw err;

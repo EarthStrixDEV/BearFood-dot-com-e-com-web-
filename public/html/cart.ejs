@@ -28,6 +28,7 @@
                     <% if (data_cart) { %>
                         <% Object.values(data_cart).map((data) => { %>
                         <tr>
+                            <input type="hidden" name="prod_id_in_cart" value="<%= data.prod_id %>">
                             <td class="prod_id"><%= data.prod_id %></td>
                             <td class="prod_name"><%= data.cart_prod_name %></td>
                             <td class="prod_description"><%= data.cart_prod_description %></td>
@@ -85,11 +86,11 @@
             </div>
             <div class="btn-operation-cart">
                 <% Object.values(customer_id).map((data) => { %>
-                <form action="/cart/check-out" method="post">
+                <form action="/cart/check-out" method="post" id="check-out">
                     <input type="hidden" name="customer_id" value="<%= data.customer_id %>">
                     <button id="checkout" style="width: 100%; text-align:center;" type="submit">Checkout <i class="fa fa-check-circle" aria-hidden="true"></i></button>
                 </form>
-                <form action="/cart/delete_cart" method="post">
+                <form action="/cart/delete_cart" method="post" id="delete-cart">
                     <input type="hidden" name="customer_id" value="<%= data.customer_id %>">
                     <button id="Update_Quantity" type="submit" style="width: 100%; text-align:center;">Clear Cart <i class="fa fa-trash" aria-hidden="true"></i></button>
                 </form>

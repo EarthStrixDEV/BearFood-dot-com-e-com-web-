@@ -86,11 +86,11 @@ router.post('/editSeller', (req, res) => {
 })
 /* Register */
 router.post("/register_customer", (req, res) => {
-    const id = req.body.edit_edit_id;
-    const username = req.body.edit_username;
-    const password = req.body.edit_.password;
-    const fname = req.body.edit_fname;
-    const lname = req.body.edit_lname;
+    const username = req.body.customer_username;
+    const password = req.body.customer_password;
+    const fname = req.body.customer_fname;
+    const lname = req.body.customer_lname;
+    const email = req.body.customer_email;
 
     let Query = `INSERT INTO customer (customer_fname ,customer_lname ,customer_username ,customer_email ,customer_password) VALUES ('${ fname }' ,'${ lname }' ,'${ username }' ,'${ email }','${ password }')`;
     
@@ -141,11 +141,11 @@ router.post('/add-address', (req, res) => {
 })
 router.get("/delete/customer_id=:id", (req, res) => {
     const customer_id = req.params.id;
-    let delete_user = `DELETE FROM customer WHERE customer_id = '${customer_id}'`;
+    let delete_user = `DELETE FROM customer WHERE customer_id = ${customer_id}`;
     try {
         sqlConnector.query(delete_user, (err, result) => {
         if (err) throw err;
-            res.redirect("/home/login_customer");
+        res.redirect("/home/");
         });
     } catch (error) {
         res.sendStatus(400).send(err);
@@ -153,11 +153,11 @@ router.get("/delete/customer_id=:id", (req, res) => {
 });
 router.get("/delete/seller_id=:id", (req, res) => {
     const seller_id = req.params.id;
-    let delete_user = `DELETE FROM seller WHERE seller_id = '${seller_id}'`;
+    let delete_user = `DELETE FROM seller WHERE seller_id = ${seller_id}`;
     try {
         sqlConnector.query(delete_user, (err, result) => {
         if (err) throw err;
-        res.redirect("/home/login_seller");
+        res.redirect("/home/");
         });
     } catch (error) {
         res.sendStatus(400).send(err);

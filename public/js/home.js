@@ -1,9 +1,7 @@
 let item_section = document.querySelectorAll('.item-section')
 let item = document.getElementById('item')
 let text_image = document.querySelector('.text-image')
-let add_item_form = document.querySelectorAll(
-  "form[action='/cart/adding-cart']"
-)
+let add_item_form = document.querySelectorAll(".adding-item");
 let name_product = document.querySelectorAll(".name-product")
 let price_product = document.querySelectorAll('.price_product')
 let id_product = document.querySelectorAll('.id_product')
@@ -24,16 +22,6 @@ item_section.forEach((item) => {
     })
 })
 
-item.addEventListener('mouseover', (e) => {
-    text_image.style.visibility = "visible"
-    e.preventDefault()
-})
-
-text_image.addEventListener('mouseout', (e) => {
-    text_image.style.visibility = "hidden"
-    e.preventDefault()
-})
-
 for (let i = 0; i < add_item_form.length; i++) {
     add_item_form[i].addEventListener('submit', (event) => {
         event.preventDefault()
@@ -48,7 +36,7 @@ for (let i = 0; i < add_item_form.length; i++) {
     })
 }
 
-let dt = new Date()
+let dt = new Date();
 cart_prod_date.forEach((cart_prod_date) => {
     cart_prod_date.value = `${dt.toLocaleDateString()} ${dt.toLocaleTimeString()}`
 })

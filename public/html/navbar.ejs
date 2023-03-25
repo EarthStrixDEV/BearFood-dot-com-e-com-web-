@@ -4,6 +4,7 @@
     rel="stylesheet"
     href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"
 />
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-aFq/bzH65dt+w6FI2ooMVUpc+21e0SRygnTpmBvdBgSdnuTN7QbdgL+OapgHtvPp" crossorigin="anonymous">
 <link rel="stylesheet" href="../css/navbar.css">
 <nav>
     <h2>BearFood Dot Com. <img src="https://cdn-icons-png.flaticon.com/512/2098/2098318.png" alt=""></h2>
@@ -19,9 +20,6 @@
         <% if (customer || seller) { %>
         <% if (customer) { %>
         <span>
-            <i class="fa fa-search"></i>
-        </span>
-        <span>
             <a href="/home/cart" style="color:rgba(31, 31, 31, 0.714);"><i class="fa fa-shopping-cart" aria-hidden="true"></i></a>
         </span>
         <% } %>
@@ -36,6 +34,10 @@
         <span>
             <a href="/home/logout" style="color:rgba(31, 31, 31, 0.714);" onclick="return confirm('Are you sure to Logout??');"><i class="fa fa-long-arrow-right" aria-hidden="true"></i></a>
         </span>
+        <form class="d-flex " role="search" action="/home/search" method="post">
+            <input class="form-control mx-2 py-0 fs-5" type="search" placeholder="Search" aria-label="Search" name="search_product">
+            <button class="btn btn-outline-success" type="submit">Search</button>
+        </form>
         <% } %>
     </div>
 </nav>
